@@ -1,0 +1,72 @@
+---
+import LinkCard from "./LinkCard.astro";
+const { heading, image, cards, paragraphs, headingWhite } = Astro.props;
+const imageLink = `url(/commonPages/${image}.jpeg)`;
+---
+
+<div>
+  <div class="hero">
+    <h1 class:list={["text-center", headingWhite && "heading-white"]}>
+      {heading}
+    </h1>
+  </div>
+  <div class="cards">
+    {
+      cards.map((card: string) => (
+        <LinkCard link={card} location="commonPages" />
+      ))
+    }
+  </div>
+  <div class="paragraphs">
+    {
+      paragraphs.map((p: string) => (
+        <>
+          <p>{p}</p>
+          <br />
+        </>
+      ))
+    }
+  </div>
+</div>
+<style define:vars={{ imageLink }}>
+  .hero {
+    height: 25rem;
+    background-image: var(--imageLink);
+    margin-left: calc(-1 * var(--main-horizontal-padding));
+    margin-right: calc(-1 * var(--main-horizontal-padding));
+    margin-top: calc(-1 * var(--main-vertical-padding));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 6rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+  .cards {
+    display: flex;
+    height: 10rem;
+    margin-top: -5rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .paragraphs {
+    margin-top: 4rem;
+  }
+  .heading-white {
+    color: var(--text-white);
+  }
+  @media (max-width: 768px) {
+    .hero {
+      height: 15rem;
+    }
+    .cards {
+      height: 3.5rem;
+      margin-top: -1.5rem;
+      gap: 0.5rem;
+    }
+    .paragraphs {
+      margin-top: 2rem;
+    }
+  }
+</style>

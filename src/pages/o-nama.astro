@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+const paragraphes = [
+  "Prirodnjački centar je mesto koje nudi doživljaj!",
+  "Vredno, pažljivo i stručno skupljamo naučna saznanja o našoj planeti, koja predstavljamo na moderan, interaktivan i atraktivan način, a bavimo se gotovo svim temama iz oblasti prirodnjačkih nauka.",
+  "Naša misija je promovisanje naučnog turizma, neformalnog obrazovanja i stvaranja svesti o važnosti očuvanja naše planete.",
+  "Kod nas posetioci uživaju u različitim izložbama, obrazovnim programima i interaktivnim iskustvima, koji su prilagođeni svim uzrastima. Mi smo i dom za raznovrsne kolekcije biljnog i životinjskog sveta, koje prikazuje bogati biodiverzitet Srbije, okolnih regiona, ali i celog sveta. Posetioci mogu da istražuju naše interaktivne izložbe o geologiji, nastanku naše planete i živog sveta na njoj, o paleontologiji, ekologiji i očuvanju životne sredine itd., stičući dublje razumevanje o kompleksnim povezanostima koje održavaju život na Zemlji.",
+  "Od uzbudljivih radionica i vođenih tura, do praktičnih eksperimenata i aktivnosti na otvorenom, u Prirodnjačkom centru nalazi se znanje i iskustvo za svakoga.",
+  "Prepoznati smo kao idealna destinacija za porodične posete i dečije ekskurzije, a svake godine se trudimo da ponudimo nove sadržaje.",
+  "Dođite i zaronite u čarobni svet prirode, krenite sa nama na putovanje istraživanja, (D)OŽIVITE NAUKU!",
+];
+---
+
+<Layout title="O nama">
+  <div class="container">
+    <h1>O nama</h1>
+    <video width="100%" controls>
+      <source src="o-nama.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    {
+      paragraphes.map((p) => (
+        <>
+          <>
+            <p>{p}</p>
+            <br />
+          </>
+        </>
+      ))
+    }
+    <a href="/upoznajte-nas-tim">
+      <Button text="Upoznajte naš tim" outlined />
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    flex-direction: column;
+  }
+  video {
+    margin: 3rem auto;
+    display: block;
+  }
+</style>

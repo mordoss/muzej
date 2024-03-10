@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Igraonica";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    headingWhite
+    image={page.toLowerCase()}
+    paragraphs={[
+      "Najmlađi posetioci imaju u parku svoj „kutak“ sa igraonicama, koje su koncipirane tako da oni budu u ulozi istraživača i naučnika i da kroz igru uđu u složeni svet nauke. Deci se nauka približava na zabavan i inovativan način. ",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${page.toLowerCase()}${index}`,
+    )}
+  /></Layout
+>

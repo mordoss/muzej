@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Nebesko kamenje";
+const image = "kamenje";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      'Izložba "NEBESKO KAMENJE" je ekskluzivna postavka originalnih meteorita koji su pali na tlo naše planete i jedna je od najvećih kolekcija meteorita u regionu.',
+      "Čvrsta tela vanzemaljskog porekla, koja prolazeći kroz atmosferu dosegnu površinu planete nazivamo meteoritima. Njihovo poreklo se uglavnom vezuje za asteroide, ali postoje i meteoriti koji na Zemlju dolaze sa susednog Marsa ili Meseca. Meteorite delimo na viđene, u smislu da je uočen njihov prolazak kroz atmosferu i nađene. Imena meteorita su vezana za mesto pada i obično su praćena brojem, jer je čest slučaj da dođe do rasprskavanja tokom prolaska kroz atmosferu pa jedan meteorit ima više delova. Za sada se zna za više od 17.000 meteorita, koji se čuvaju u specijalizovanim institucijama. Trenutno se ovaj broj rapidno povećava.",
+      "Izložba se sastoji i od tri replike značajnijih meteorita koji su pali na teritoriju sadašnje Srbije, a to su sokobanjski, jelički i dimitrovgradski meteorit, koji je i najveći pronađeni meteorit u Srbiji, dugo poznat kao “dimitrovgradsko gvožđe”. Posetioci mogu da saznaju kada su ovi meteoriti otkriveni, koliko su teški i kakva im je struktura.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

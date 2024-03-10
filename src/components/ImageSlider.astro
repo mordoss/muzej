@@ -1,0 +1,83 @@
+---
+const { location, numberOfElements, height, jpeg } = Astro.props;
+
+const images = Array.from(
+  { length: numberOfElements },
+  (_, index) => index + 1,
+).map((review) => `${location}/${review}.${jpeg ? "jpeg" : "png"}`);
+---
+
+<div class="scroller">
+  <div class="scroller__inner">
+    {
+      images.map((image: string) => (
+        <img src={image} alt={location} class:list={[jpeg && "clip"]} />
+      ))
+    }
+  </div>
+</div>
+<style define:vars={{ height }}>
+  img {
+    width: auto;
+    height: var(--height);
+  }
+  .clip {
+    clip-path: polygon(8% 8%, 93% 9%, 93% 93%, 8% 93%);
+  }
+  @media (max-width: 768px) {
+    img {
+      height: calc(var(--height) / 2);
+    }
+  }
+  .scroller {
+    margin-left: calc(-1 * var(--main-horizontal-padding));
+    margin-right: calc(-1 * var(--main-horizontal-padding));
+  }
+  .scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  .scroller[data-animated="true"] {
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 2%,
+      rgba(0, 0, 0, 1) 98%,
+      transparent 100%
+    );
+  }
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll 40s reverse linear infinite;
+  }
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+</style>
+<script>
+  const scrollers = document.querySelectorAll(".scroller");
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", true);
+
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
+</script>

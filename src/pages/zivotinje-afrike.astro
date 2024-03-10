@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Životinje Afrike";
+const image = "zivotinje";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      "Izložba „ŽIVOTINJE AFRIKE“ na zanimljiv način prikazuje afričke životinje koje su preparirane posebnim metodama.",
+      "Kao što se klimatski tipovi prostiru simetrično od ekvatora, tako se prostire i vegetacija, a promena vegetacijskih tipova prati smanjenje padavina. Ovakva skoro idealna zonalnost i simetričnost vegetacije je jedinstvena i omogućava veliku biološku raznovrsnost svih živih organizama na afričkom kontinentu.",
+      "Posetioci će imati jedinstvenu priliku da saznaju nešto više o izgledu životinja Afrike, o njihovom načinu ishrane, razmnožavanja i načinu lova. Pored žirafe visine preko 5 metara ili slona težine preko 5 tona, posetioci će videti i raličite vrste antilopa, goveda i ptica.",
+      "Oriks antilopa, kob antilopa, crni gnu, nilski krokodil ili bradavičasta svinja su samo neke od prepariranih životinja koje možete videti u Prirodnjačkom centru u Svilajncu.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

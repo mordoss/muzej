@@ -1,0 +1,151 @@
+---
+import Button from "../components/Button.astro";
+const {
+  link,
+  text,
+  square,
+  buttonText,
+  height,
+  location,
+  secondLink,
+  paragraph,
+  small,
+  smallest,
+  biggerPadding,
+} = Astro.props;
+
+const img = `url(/${location}/${link}.jpeg)`;
+---
+
+<div
+  class:list={[
+    square && "square",
+    height && "height",
+    biggerPadding && "biggerPadding",
+  ]}
+  class="container"
+>
+  <h4 class:list={[small && "small", smallest && "smallest"]}>
+    {text}
+  </h4>
+  {paragraph && <p>{paragraph}</p>}
+  <div class="actions">
+    {
+      buttonText && (
+        <a href={secondLink}>
+          <Button text={buttonText} marginTop="0rem"/>
+        </a>
+      )
+    }
+    {
+      location !== "commonPages" && location !== "happening" && (
+        <a
+          href={link}
+          class:list={[small && "small", "details", smallest && "smallest"]}
+        >
+          Detaljnije{" "}
+          <img
+            src="arrow-right.svg"
+            alt="strelica"
+            class:list={[smallest && "smallest"]}
+          />
+        </a>
+      )
+    }
+  </div>
+</div>
+<style define:vars={{ img, height }}>
+  .container {
+    background-image: var(--img);
+    width: 100%;
+    filter: drop-shadow(2px 8px 10px rgba(124, 73, 5, 0.16));
+    padding: 2rem 2rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+    background-size: 125%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  .container:hover {
+    background-size: 130%;
+  }
+  .square {
+    aspect-ratio: 1;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .height {
+    height: var(--height);
+  }
+  h4,
+  a,
+  p {
+    color: var(--text-white);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 0.5s ease;
+  }
+  a.details:hover {
+    border: 1px solid var(--text-white);
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  p {
+    margin-bottom: auto;
+  }
+  @media (max-width: 768px) {
+    .container {
+      padding: 0.5rem;
+    }
+    .container.biggerPadding {
+      padding: 1rem;
+    }
+    h4 {
+      padding: 0;
+    }
+    h4.smallest {
+      font-size: 0.6rem;
+    }
+    h4.small {
+      font-size: 0.8rem;
+    }
+    a {
+      padding: 0;
+      gap: 0.55rem;
+    }
+    .details.small {
+      font-size: 0.75rem;
+    }
+    .details.smallest {
+      font-size: 0.5rem;
+    }
+    img {
+      width: 1rem;
+    }
+    img.smallest {
+      width: 0.75rem;
+    }
+    .height {
+      height: calc(var(--height) / 2.7);
+    }
+    .actions {
+      gap: 1rem;
+ ∂    }
+    p {
+      padding: 0 0;
+    }
+    a.details:hover {
+    border: none;
+  }
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Fluorescentni minerali";
+const image = "f-minerali";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      "Lorem ipsum dolor sit amet consectetur. Ullamcorper odio suspendisse tortor ante sit blandit eget gravida. Id eget feugiat porttitor mattis eget id egestas dictumst. Vitae ultrices sed arcu vel mauris arcu vitae eget sollicitudin.",
+      ,
+      "Lorem ipsum dolor sit amet consectetur. Ullamcorper odio suspendisse tortor ante sit blandit eget gravida. Id eget feugiat porttitor mattis eget id egestas dictumst. Vitae ultrices sed arcu vel mauris arcu vitae eget sollicitudin.",
+      ,
+      "Lorem ipsum dolor sit amet consectetur. Ullamcorper odio suspendisse tortor ante sit blandit eget gravida. Id eget feugiat porttitor mattis eget id egestas dictumst. Vitae ultrices sed arcu vel mauris arcu vitae eget sollicitudin.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

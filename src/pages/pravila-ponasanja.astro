@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { rules, specialRules } from "../utils/constants";
+---
+
+<Layout title="Pravila ponašanja">
+  <h1>Pravila ponašanja u Prirodnjačkom centru</h1>
+  <p class="advice">
+    Da bi Vaša poseta Prirodnjačkom centru bila što prijatnija, molimo Vas da
+    poštujete sledeća pravila:
+  </p>
+  <h3>Opšta pravila ponašanja</h3>
+  <div class="grid grid-3">
+    {
+      rules.map((rule) => (
+        <div class="rule">
+          <img src="/forbiden.svg" alt="zabranjeno" />
+          <p>{rule}</p>
+        </div>
+      ))
+    }
+  </div>
+  <h3 class="special">Posebna pravila za grupne posete</h3>
+  {
+    specialRules.map((rule, i) => (
+      <>
+        <p
+          class:list={[
+            {
+              topMargin: i === 2,
+            },
+          ]}
+        >
+          {rule}
+        </p>
+        <br />
+      </>
+    ))
+  }
+</Layout>
+<style>
+  h1,
+  h3,
+  p.advice {
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+  }
+  h3.special {
+    margin-top: 6.5rem;
+  }
+  .grid {
+    gap: 4rem;
+  }
+  .rule p {
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+  .topMargin {
+    margin-top: 2rem;
+  }
+  @media (max-width: 768px) {
+    .grid {
+      gap: 2rem;
+    }
+    img {
+      width: 2rem;
+    }
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    h3.special {
+      margin-top: 3rem;
+    }
+  }
+</style>

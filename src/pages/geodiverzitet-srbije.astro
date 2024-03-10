@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Geodiverzitet Srbije";
+const image = "geodirverzitet";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      'Izložba "GEODIVERZITET SRBIJE" je smeštena na spratu Prirodnjačkog centra u Svilajncu. Ova zanimljiva postavka predstavlja geološki profil Srbije koji se prostire u pravcu Nikšić - Vidin do dubine od oko 5 kilometara. Drugim rečima posetioci će moći da saznaju kako bi izgledalo kada bi neko presekao tlo naše zemlje u pomenutom pravcu. Na tom preseku se jasno vide geološke formacije koje izgrađuju našu zemlju, kao i prostor iščezlog okeana Tetisa, koji je nestao "sudaranjem" afričke i evropske tetktonske ploče baš na prostoru Srbije. Geološki profil Srbije upotpunjen je primercima originalnih stena koje su karakteristične za naše prostore i koje su označene na samom profilu.',
+      "Posetioci će imati jedinstvenu priliku da saznaju nešto o geološkoj prošlosti naše zemlje, njenoj geološkoj građi i drugim geološkim fenomenima koji su karakteristični za Srbiju. Jedan segment ove izložbe je posvećen rudnom blagu Srbije tj. prikazom koji se sve korisni minerali mogu naći u našoj zemlji. Ovaj segment će biti predstavljen metalogenetskom kartom Srbije na kojoj će biti ucrtana sva značajnija ležišta mineralnih sirovina. U pratećim vitrinama biće izloženi primerci nekih korisnih minerala - od metala, nemetala, preko građevinskih sirovina do fosilnih goriva.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

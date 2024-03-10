@@ -1,0 +1,15 @@
+---
+const { light } = Astro.props;
+---
+
+<a href="/"
+  ><img src={light ? "logo-light.svg" : "logo-dark.svg"} alt="logo" /></a
+>
+<style>
+  @media (max-width: 768px) {
+    img {
+      width: 6rem;
+      height: auto;
+    }
+  }
+</style>

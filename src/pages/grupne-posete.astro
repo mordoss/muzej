@@ -1,0 +1,151 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+const content = [
+  {
+    p: "Obilazak muzeja u pratnji vodiča kroz izložbe u zgradi muzeja:",
+    ul: [
+      "Geološki vremeplov",
+      "Skeleti dinosaurusa",
+      "Nebesko kamenje",
+      "Životinje Afrike",
+    ],
+  },
+  {
+    p: "Obilazak muzeja u pratnji vodiča kroz izložbe u zgradi muzeja:",
+    ul: [
+      "Geološki vremeplov",
+      "Skeleti dinosaurusa",
+      "Nebesko kamenje",
+      "Životinje Afrike",
+      "Svet minerala i stena",
+      "Fluorescentni minerali",
+      "Mamut Kika",
+      "Geodiverzitet Srbije",
+      "Biodiverzitet Srbije",
+    ],
+  },
+  {
+    p: "Obilazak parka Dinosvil u kom je preko 30 replika dinosaurusa u prirodnoj veličini i izložbe u Vulkanu u pratnji vodiča.",
+    ul: [],
+  },
+  {
+    p: "Obilazak parka Dinosvil u kom je preko 30 replika dinosaurusa u prirodnoj veličini i izložbe u Vulkanu u pratnji vodiča.",
+    ul: [],
+  },
+  {
+    heading: "Ove sezone u ponudi imamo SPECIJALAN PAKET ZA GRUPE.",
+    p: "Specijalni paket podrazumeva:",
+    ul: [
+      "Obilazak muzeja i parka",
+      "Gledanje filma u bioskopu",
+      "Interaktivne predstave u igraonici",
+      " Ručak u restoranu Prirodnjačkog centra",
+    ],
+    button: true,
+  },
+  {
+    heading: "Ove sezone u ponudi imamo SPECIJALAN PAKET ZA GRUPE.",
+    p: "Specijalni paket podrazumeva:",
+    ul: [
+      "Obilazak muzeja i parka",
+      "Gledanje filma u bioskopu",
+      "Ručak u restoranu Prirodnjačkog centra",
+    ],
+    button: true,
+  },
+];
+---
+
+<Layout title="Grupne posete">
+  <div>
+    <div class="hero">
+      <h1 class="text-white text-center">Grupne posete</h1>
+    </div>
+    <div class="grid grid-2">
+      <h4>
+        Organizovanje grupnih poseta za predškolske ustanove kao i decu uzrasta
+        od 1. do 4. razreda.
+      </h4>
+      <h4>
+        Organizovanje grupnih poseta jednodnevni izlet za osnovne i srednje
+        škole.
+      </h4>
+      {
+        content.map((item) => (
+          <div class="item">
+            <img src="check.svg" alt="Da" />
+            {item.heading && <h4>{item.heading}</h4>}
+            <p>{item.p}</p>
+            <br />
+            <ul>
+              {item.ul.map((li) => (
+                <li>{li}</li>
+              ))}
+            </ul>
+            {item.button && (
+              <div class="button-container">
+                <Button text="Zakažite grupnu posetu" marginTop="3rem" />
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div></Layout
+>
+<style>
+  .hero {
+    height: 26rem;
+    background-image: url("/group-visit.jpeg");
+    margin-left: calc(-1 * var(--main-horizontal-padding));
+    margin-right: calc(-1 * var(--main-horizontal-padding));
+    margin-top: calc(-1 * var(--main-vertical-padding));
+    margin-bottom: 6rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem;
+  }
+  ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+  }
+  li {
+    color: var(--text-main);
+  }
+  .grid {
+    gap: 2rem;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  h4 {
+    margin-bottom: 2rem;
+  }
+  .button-container {
+    margin-top: auto;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      height: 12rem;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    h4 {
+      font-size: 1.25rem;
+    }
+    img {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+</style>

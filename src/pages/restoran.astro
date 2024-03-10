@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Restoran";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={page.toLowerCase()}
+    paragraphs={[
+      "Restoran se nalazi u Dino parku u autentičnom ambijentu sa pogledom na preko 30 replika dinosaurusa u prirodnoj veličini. Ukupan kapacitet restorana je 135 mesta, od čega klimatizovani deo za nepušače prima 60 gostiju dok se u bašti može smestiti 75 gostiju.",
+      "Pored restorana nalazi se edukativna igraonica za decu, tako da roditelji mogu iz bašte restorana da posmatraju svoje mališane koji kroz igru ulaze u svet nauke.",
+      "Naši najmlađi posetioci će moći da uživaju u ukusima specijalnih obroka za decu, a odrasli u raznolikoj ponudi hrane i pića.",
+      "Možemo se pohvaliti i prestižnom nagradom koju smo dobili na 50. Međunarodnom sajmu turizma u Novom Sadu za kvalitetnu gastronomsku ponudu restorana.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${page.toLowerCase()}${index}`,
+    )}
+  /></Layout
+>

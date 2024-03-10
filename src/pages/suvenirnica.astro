@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Suvenirnica";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={page.toLowerCase()}
+    paragraphs={[
+      "Nalazi se u parku Prirodnjačkog centra i svojim izgledom pećine uklapa se u autentičnu atmosferu. Bogato je opremljena i svaki posetilac u njoj može naći poklon, igračku, ekciklopediju ili dragu uspomenu, kao i neki od proizvoda iz domaće radinosti.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${page.toLowerCase()}${index}`,
+    )}
+  /></Layout
+>

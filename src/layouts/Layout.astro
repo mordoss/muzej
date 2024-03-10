@@ -1,51 +1,161 @@
 ---
+import "@fontsource-variable/noto-sans";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { colors } from "../utils/constants";
 interface Props {
-	title: string;
+  title: string;
 }
-
 const { title } = Astro.props;
+const mainLinks = ["o nama", "ulaznice", "kupovina grupnih karata", "kontakt"];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header mainLinks={mainLinks} />
+    <main>
+      <slot />
+    </main>
+    <Footer mainLinks={mainLinks} />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+<style is:global define:vars={{ ...colors }}>
+  :root {
+    --bg: #faf7f2;
+    --bg-second: #f7e1ca;
+    --footer-bg: #936031;
+    --text-main: #5a391c;
+    --text-light: #7c4905;
+    --text-white: #fff1ea;
+    --action-main: #f07c2f;
+    --hover: #d95b08;
+    --border-form: #ab784a;
+    --link: #3e99c8;
+    --main-horizontal-padding: 12.5rem;
+    --main-vertical-padding: 5rem;
+    --max-width: 1440px;
+  }
+  @media (max-width: 1200px) {
+    :root {
+      --main-horizontal-padding: 6rem;
+    }
+  }
+  @media (max-width: 1000px) {
+    :root {
+      --main-horizontal-padding: 3rem;
+      --main-vertical-padding: 3rem;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    color: var(--text-main);
+  }
+  p {
+    font-size: 1rem;
+    color: var(--text-light);
+    white-space: pre-line;
+  }
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    overflow: hidden;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .grid-2,
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (max-width: 768px) {
+    :root {
+      --main-horizontal-padding: 1.5rem;
+      --main-vertical-padding: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.75rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.125rem;
+    }
+    .grid {
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+    }
+    main {
+      min-height: calc(100vh - 10rem);
+    }
+  }
+  body {
+    background-color: var(--bg);
+    font-family: "Noto Sans Variable", sans-serif;
+    min-height: 100vh;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  main {
+    padding: var(--main-vertical-padding) var(--main-horizontal-padding);
+    overflow: hidden;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+    color: var(--link);
+    cursor: pointer;
+  }
+  a:first-letter {
+    text-transform: capitalize;
+  }
+
+  h3 {
+    font-size: 2.25rem;
+    color: var(--text-main);
+  }
+  h4 {
+    font-size: 1.75rem;
+    color: var(--text-main);
+  }
+
+  ul {
+    list-style-type: none;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .mt {
+    margin-top: 1.5rem;
+  }
+  .mt3 {
+    margin-top: 3rem;
+  }
+  .text-white {
+    color: var(--text-white);
+  }
 </style>

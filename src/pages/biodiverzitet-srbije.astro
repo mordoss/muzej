@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Biodiverzitet Srbije";
+const image = "biodiverzitet";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      "Izložba BIODIVERZITET SRBIJE predstavlja bogatstvo flore i faune naše zemlje. Sve vrste su originalne i napravljene specijalnim preparatorskim metodama. Smeštene su u karakteristične situacije, prikazane kroz sva četiri godišnja doba i kroz različite delove dana. Ova izložba na autentičan način prikazuje prirodna bogatstva Srbije.",
+      "Opstanak čoveka neposredno je uslovljen očuvanjem prirodnih resursa Planete, čija je osnova ukupna biološka raznovrsnost (biodiverzitet) njenog živog sveta. Stoga je u savremenim strategijama razvoja uvršten i koncept zaštite i očuvanja biodiverziteta, odnosno planiranje privrednog i opštedruštvenog razvoja, uz racionalno korišćenje resursa i očuvanje prirode i životne sredine. Srbija predstavlja jedan od šest centara biodiverziteta u Evropi. Srbiju karakteriše visok stepen genetskog, specijskog i ekosistemskog diverziteta. Na teritoriji Srbije izdvojeno je 62 značajna područja za biljke, 42 značajna područja za ptice i 40 odabranih područja za dnevne leptire.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

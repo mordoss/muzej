@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = 'Mamut "Kika"';
+const image = "mamut";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      'Ova izložba predstavlja repliku mamuta "Kike" u prirodnoj veličini, koja je otkrivena 1996. godine u glinokopu fabrike "Toza Marković" u Kikindi. "Kika" će posetiocima biti predstavljena u "ležećem" položaju tj. u autentičnom položaju kako je i pronađena u glinokopu na dubini od 21 metra. Na ovaj način posetioci će moći da vide i dožive kako izgleda potraga i iskopavanje ovih džinovskih sisara i da u najboljem svetlu sagledaju grandioznost ovog jedinsvenog eksponata. Posetici će moći da se detaljno upoznaju sa mamutima, da saznaju kako su oni živeli, čime su se hranili i na kraju koji je razlog njihovog izumiranja.',
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

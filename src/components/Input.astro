@@ -1,0 +1,42 @@
+---
+const { type, label, placeholder } = Astro.props;
+---
+
+<div>
+  <label for={label}>{label}</label>
+  {
+    type === "textarea" ? (
+      <textarea placeholder={placeholder} />
+    ) : (
+      <input type={type} id={label} placeholder={placeholder} />
+    )
+  }
+</div>
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  label {
+    display: block;
+    color: var(--text-main);
+  }
+  input,
+  textarea {
+    margin-top: 0.5rem;
+    background-color: transparent;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-form);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--border-form);
+  }
+  textarea {
+    height: 6rem;
+  }
+</style>

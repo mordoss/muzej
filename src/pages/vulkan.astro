@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Vulkan";
+const image = "vulkan";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      "Izložba „VULKAN” je smeštena u parku Prirodnjačkog centra u modelu ”pravog” vulkana visine oko 10 metara. U unutrašnjosti ovog vulkana smeštena je jedinstvena izložba na temu vulkanologije, koja posetiocima pruža odgovore na pitanja: Šta su vulkani? Gde se oni nalaze? Koja je njihova uloga na Zemlji? Kakvi sve vulkani postoje? Da li je bilo vulkana u Srbiji? Veći deo ove izložbe čini i zbirka stena vulkanskog porekla, kako iz naše zemlje tako i iz različitih krajeva sveta.",
+      "Spoljašnost vulkana objašnjava njegovu građu i funkciju, kao i neke posebne fenomene svojstvene vulkanima - izazivanje ogromnih, razornih talasa cunamija. Posetioci će tako imati priliku da šetnjom kroz vulkan saznaju i nauče sve o njima, na interesantan i nesvakidašnji način.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

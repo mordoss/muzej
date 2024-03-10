@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Ivana">
+  <div class="container">
+    <div class="profile"></div>
+    <div>
+      <h1>Zdravo,</h1>
+      <br />
+      <p>Ja sam Ivana.</p>
+      <br />
+      <p>Kontaktirajte me kako bismo se dogovorili oko organizacije,</p>
+      <p>radnm danima u periodu od 08-16h.</p>
+      <br />
+      <p>Tel: 035/88-14-001</p>
+      <p>Mob: 064/809-81-77</p>
+      <p>E-mail: ivana.popovic@prirodnjackicentar.rs</p>
+    </div>
+  </div>
+</Layout>
+<style>
+  .container {
+    display: flex;
+    gap: 3rem;
+  }
+  .profile {
+    border-radius: 50%;
+    background-color: silver;
+    width: 10rem;
+    height: 10rem;
+    border: 5px solid var(--action-main);
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+</style>

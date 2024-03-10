@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Svet dinosaurusa";
+const image = "dinosaurus";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      'Izložba "SVET DINOSAURUSA" smeštena je u centralnom delu zgrade. Paleonotološku postavku čine skelei različitih vrsta dinosaurusa koji na jedinstven način dočaravaju period mezozoika.  Sve skeletne replike rađene su po uzoru na originalne fosile. Utemeljena na naučnim činjenicama ova izložba posetioce na najbolji i najatraktivniji način upoznaje sa osnovama paleontologije. Svi skeleti su identični originalima, autentični i naučno utemeljene građe, izrađeni u holandskom gradu Lajdenu, u radionici koja se nalazi pri Univerzitetu u istoimenom gradu. Segment ove izložbe čini i postavka originalnih fosila dinosurusa iz američke države Vajoming kao i paleontološke opreme koja se koristi prilikom njihovih iskopavanja.',
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

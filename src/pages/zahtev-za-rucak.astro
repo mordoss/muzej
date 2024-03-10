@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Input from "../components/Input.astro";
+import ButtonCard from "../components/ButtonCard.astro";
+
+const paragraphes = [
+  "Ukoliko imate potrebe za posebnim vrstama obroka ili druge napomene (alergije, verski obroci i sl.), molimo vas da napomenete.",
+  "Podnošenje ovog zahteva istovremeno predstavlja i podnošenje zahteva za izradu e-fakture za pravno lice - podnosioca zahteva. To podrazumeva sledeću proceduru: evidencija prometa na fiskalnoj kasi, refundacija tog fiskalnog isečka u istom danu i izrada e-fakture sa istim datumom prometa i iznosom prometa. Procedura će se sprovoditi sve do trenutka kada se programski omogući da evidencija prometa na fiskalnoj kasi podrazumevai automatsku izradu e-fakture, odnosno dođe do drugih uputstava nadležnih državnih organa.",
+];
+
+const meals = [
+  {
+    heading: "Dečiji dino obrok",
+    options: [
+      "Grilovana piletina 130g",
+      "Pire krompir",
+      "Salata",
+      "Hleb",
+      "Dino kolač",
+      "Sok",
+    ],
+    dropdowns: ["Cena obroka bez supe 800,00 din"],
+    prices: [
+      "Cena obroka bez supe 800,00 din",
+      "Cena obroka sa supom 880,00 din",
+    ],
+  },
+  {
+    heading: "Osnovnoškolski obrok 1",
+    options: ["Salata", "Lepinja", "Sok u čaši"],
+    dropdowns: [
+      "Pljeskavica / Pileći file - DD Menu",
+      "Pire krompir / Pomfrit - DD Menu",
+    ],
+    prices: ["Cena obroka je 700,00 din"],
+  },
+  {
+    heading: "Osnovnoškolski obrok 2",
+    options: ["Pileća supa", "Hleb", "Salata"],
+    dropdowns: [
+      "Pljeskavica / Pileći file - DD Menu",
+      "Pire krompir / Pomfrit - DD Menu",
+      "Sa kolačem / Bez kolača - DD Menu",
+    ],
+    prices: [
+      "Cena obroka bez kolača 800,00 din",
+      "Cena obroka sa kolačem 900,00 din",
+    ],
+  },
+  {
+    heading: "Školski obrok",
+    options: ["Pljeskavica u lepinji sa prilozima", "Pomfrit", "Sok u čaši"],
+    prices: ["Cena obroka sa kolačem 500,00 din"],
+    dropdowns: [],
+  },
+  {
+    heading: "Obrok za odrasle",
+    options: [
+      "Pileća supa",
+      "Pileća bečka šnicla 200g",
+      "Pomfrit",
+      "Salata",
+      "Lepinja",
+      "Kolač",
+    ],
+    dropdowns: ["Sok u čaši / Kisela voda u čaši - DD Menu"],
+    prices: ["Cena obroka sa kolačem 950,00 din"],
+  },
+  {
+    heading: "Lanč paket",
+    options: ["Pljeskavica u lepinji", "Mali pomfrit", "Čokoladna krofnica"],
+    dropdowns: ["Vodica / Sok u čaši - DD Menu"],
+    prices: ["Cena obroka sa kolačem 550,00 din"],
+  },
+];
+---
+
+<Layout title="Zahtev za ručak u restoranu"
+  ><h1>Zahtev za ručak u restoranu</h1>
+  <div class="grid grid-2">
+    <Input type="date" label="Datum obroka:" />
+    <Input type="time" label="Vreme obroka:" />
+    <Input
+      type="text"
+      label="Naručilac:"
+      placeholder="Unesite naziv naručioca"
+    />
+    <Input type="email" placeholder="Unestite e-mail" label="E-mail:" />
+  </div><div class="grid grid-2 meals">
+    {
+      meals.map((meal) => (
+        <ButtonCard
+          heading={meal.heading}
+          options={meal.options}
+          dropdowns={meal.dropdowns}
+          prices={meal.prices}
+        />
+      ))
+    }
+  </div>
+  <p>Sve cene su sa uračunatim PDV-om.</p>
+  <p>{paragraphes[0]}</p>
+  <br />
+  <Input type="textarea" label="Napomena:" />
+  <br />
+
+  <p>Napomena:</p>
+  <p>
+    {paragraphes[1]}
+  </p>
+</Layout>
+<style>
+  .meals {
+    margin: 5rem 0;
+  }
+  @media (max-width: 768px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Dinosville";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={page.toLowerCase()}
+    paragraphs={[
+      "DINO PARK – Najveći deo parka zauzima jedinstvena postavka dinosaurusa u njihovim živim oblicima i autentičnom okruženju. U parku se nalazi preko 20 replika različitih vrsta dinosaurusa, od kojih je najveća replika Diplodokusa visoka 11, a dugačka 20 metara.",
+      "Kroz dino izložbu upoznaćete se sa osobinama i zanimljivostima i ostalih dinosaurusa, a neki od njih su Diplodokus, Dinonihus, Plesiosaurus, Pteranodon, Triceratops, Alosaurus i mnogi drugi.",
+      "U okviru Dino parka nalaze se restoran, suvenirnica i igraonica za najlađe posetioce.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${page.toLowerCase()}${index}`,
+    )}
+  /></Layout
+>

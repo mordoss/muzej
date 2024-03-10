@@ -1,0 +1,64 @@
+---
+const { text, outlined, marginTop, wide, semiwide, fullWidth } = Astro.props;
+---
+
+<button
+  class:list={[
+    outlined && "outlined",
+    wide && "wide",
+    semiwide && "semiwide",
+    fullWidth && "fullWidth",
+  ]}>{text}</button
+>
+<style define:vars={{ marginTop }}>
+  button {
+    background-color: var(--action-main);
+    border: none;
+    color: var(--text-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    cursor: pointer;
+    margin-top: var(--marginTop) !important;
+    transition: all 0.25s ease;
+    width: fit-content;
+  }
+  button:hover {
+    background-color: var(--hover);
+  }
+  .outlined {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    font-weight: 600;
+  }
+  .outlined:hover {
+    background-color: transparent;
+    color: var(--action-main);
+    border: 1px solid var(--action-main);
+  }
+  .wide {
+    padding: 0.75rem 8rem;
+  }
+  .semiwide {
+    padding: 0.75rem 5rem;
+  }
+  .fullWidth {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+    }
+    .semiwide {
+      padding: 0.75rem 2rem;
+    }
+    .wide {
+      padding: 0.75rem 2rem;
+    }
+    button {
+      margin-top: 2rem;
+    }
+  }
+</style>

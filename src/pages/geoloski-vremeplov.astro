@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Geološki vremeplov";
+const image = "vremeplov";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      'Izložba "GEOLOŠKI VREMEPLOV" jedna je od najatraktivnijih izložbi i predstavlja nastanak planete Zemlje i njen razvoj kroz epohe sve do postanka čoveka. Posetioci doživljavaju svojevrsno putovanje u prošlost kroz prikaze geološke istorije Zemlje od Velikog praska do pojave savremenog čoveka. To je prikaz evolucije planete Zemlje kroz ilustrativne primere geoloških era i perioda kao i ključnih događaja u evoluciji živog sveta.',
+      "Značaj ove izložbe je u tome što populariše geologiju i različite geološke discipline: paleontologiju paleobotaniku, paleozoologiju, paleoekologiju, paleogeografiju, tektoniku ploča, vulkanologiju, seizmologiju. Ima i veliki edukativni potencijal, jer upoznaje širu publiku sa ključnim događajima u geološkoj istoriji i edukuje sve ciljne grupe posetilaca.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

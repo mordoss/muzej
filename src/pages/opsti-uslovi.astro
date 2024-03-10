@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { bikeRentalConditions } from "../utils/constants";
+---
+
+<Layout title="Opšti uslovi korišćenja bicikli">
+  <h1>Iznajmljivanje bicikli</h1>
+  {
+    bikeRentalConditions.map((rule) => (
+      <>
+        <p>{rule}</p>
+        <br />
+      </>
+    ))
+  }
+</Layout>
+<style>
+  h1 {
+    margin-bottom: 3rem;
+  }
+</style>

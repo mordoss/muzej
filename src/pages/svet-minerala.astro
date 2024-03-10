@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CommonPage from "../components/CommonPage.astro";
+
+const page = "Svet stena i minerala";
+const image = "minerali";
+---
+
+<Layout title={page}
+  ><CommonPage
+    heading={page}
+    image={image}
+    paragraphs={[
+      'Izložba "SVET STENA I MINERALA" predstavlja minerale i stene od koih je izgrađena naša planeta. Pored minerala i stena koji su karakteristični za Srbiju postavka sadrži i primerke veoma retkih minerala što je čini ekskluzivnom. Jedan od najatraktivnijih eksponata je mineral Jadarit koji je za sada pronađen jedino na teritoriji naše zemlje, a koji po svom hemijskom sastavu odgovara čuvenom Kriptonitu iz Supermenovih stripova.',
+      "Minerali i stene su neraskidivi deo čovekove svakodnevice i okruženja u kojem živi i radi. Njihov značaj proističe iz uticaja koji imaju na život čoveka u najširem smislu. Minerali i stene su osnovni deo lanca ishrane, jer je to materijal od koga nastaje zemljište. Od minerala i stena se prave kuće, putevi, iz njih se ekstrahuju korisni i plemeniti metali, a mnogi minerali i stene se koriste i u ishrani i farmaciji. Kroz ekskluzivne primerke svaki posetioc moći će da se upozna i sa osobinama minerala, njihovim nastankom, svojstvima, građom, upotrebom itd.",
+    ]}
+    cards={Array.from({ length: 4 }, (_, index) => index + 1).map(
+      (index) => `${image}${index}`,
+    )}
+  /></Layout
+>

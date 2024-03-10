@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LinkCard from "../components/LinkCard.astro";
+const paragraphs = [
+  "Prirodnjački centar Srbije Svilajnac predstavlja spoj nauke, obrazovanja, zabave i turizma na jednom mestu, na vrlo specifičan način. Takav koncept čini ga jedinstvenim u ovom delu Evrope. Otvoren je 29. juna 2015. godine svečanim programom kome je prisustvovalo nekoliko hiljada posetilaca.",
+  "Atraktivnost Prirodnjačkog centra ogleda se u jedinstvu velikog izložbenog (muzejskog) prostora i zabavnog dino-parka na otvorenom. Muzejski deo Prirodnjačkog centra čini devet tematskih izložbi, koje se nalaze u samom objektu, dok se jedna izložba nalazi u parku, u unutrašnjosti modela vulkana.",
+  "Na izradi svih postavki učestvovali su stručnjaci Prirodnjačkog muzeja iz Beograda, Rudarsko-geološkog fakulteta Univerziteta u Beogradu i kustosi Prirodnjačkog centra u Svilajncu.",
+];
+---
+
+<Layout title="Izložbe"
+  ><h1>Izložbe</h1>
+  {
+    paragraphs.map((p) => (
+      <>
+        <p>{p}</p>
+        <br />
+      </>
+    ))
+  }
+  <div class="grid col-3-1">
+    <LinkCard
+      location="exhibitions"
+      link="svet-dinosaurusa"
+      text="Svet dinosaurusa"
+      small
+    />
+    <LinkCard
+      location="exhibitions"
+      link="geoloski-vremeplov"
+      text="Geološki vremeplov"
+      square
+      small
+    />
+    <LinkCard
+      location="exhibitions"
+      link="svet-minerala"
+      square
+      text="Svet stena i minerala"
+      small
+    />
+  </div>
+  <div class="grid col-3-2">
+    <LinkCard
+      location="exhibitions"
+      link="nebesko-kamenje"
+      text="Nebesko kamenje"
+      square
+      smallest
+    />
+    <LinkCard
+      location="exhibitions"
+      link="zivotinje-afrike"
+      text="Životinje Afrike"
+      small
+    />
+    <LinkCard
+      location="exhibitions"
+      link="biodiverzitet-srbije"
+      text="Biodiverzitet Srbije"
+      square
+      smallest
+    />
+  </div>
+  <div class="grid col-4">
+    <LinkCard
+      location="exhibitions"
+      link="geodiverzitet-srbije"
+      text="Geodiverzitet Srbije"
+      square
+      smallest
+    />
+    <LinkCard location="exhibitions" link="vulkan" text="Vulkan" smallest />
+    <LinkCard
+      location="exhibitions"
+      link="minerali"
+      text="Fluorescentni minerali"
+      square
+      smallest
+    />
+    <LinkCard
+      location="exhibitions"
+      link="mamut"
+      text='Mamut "Kika"'
+      smallest
+    />
+  </div>
+</Layout>
+<style>
+  h1 {
+    margin-bottom: 3rem;
+  }
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .col-3-1 {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    margin-top: 2.5rem;
+  }
+  .col-3-2 {
+    grid-template-columns: 1fr 1.5fr 1fr;
+  }
+  .col-4 {
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+  }
+  @media (max-width: 768px) {
+    .grid {
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .col-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+</style>

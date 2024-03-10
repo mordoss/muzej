@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+import { colors, tickets } from "../utils/constants";
+---
+
+<Layout title="Ulaznice">
+  <div class="container">
+    <div class="col-small">
+      <h1>Ulaznice</h1>
+      <p>Kupovina karata se obavlja u biletarnici Prirodnjačkog centra.</p>
+      <br />
+      <p>Poslednji ulazak je 60 min pre zatvaranja.</p>
+      <a href="/pravila-ponasanja">
+        <Button text="Pravila ponašanja" outlined /></a
+      >
+      <div>
+        <img src="/bicycle.svg" alt="bicikla" />
+        <p>
+          Uz kupljenu kartu za Prirodnjački centar, ulaz na gradske bazene je
+          BESPLATAN.
+        </p>
+      </div>
+      <div>
+        <img src="/pool.svg" alt="bazen" />
+        <p>
+          Uz kupljenu kartu za Prirodnjački centar, iznajmljivanje bicikli je
+          BESPLATNO.
+        </p>
+      </div>
+      <a href="iznajmite-bicikl"> <Button text="Iznajmite bicikl" /></a>
+    </div>
+    <div class="col-big">
+      <div class="grid">
+        {
+          tickets.regular.map((ticket) => (
+            <Card
+              backgroundColor={colors.actionMain}
+              textPrimary={ticket.text}
+              textSecondary={ticket.price}
+              shadow
+              height="8rem"
+            />
+          ))
+        }
+      </div>
+      <h3>Posebne ulaznice</h3>
+      <div class="grid">
+        {
+          tickets.special.map((ticket) => (
+            <Card
+              backgroundColor={colors.actionMain}
+              textPrimary={ticket.text}
+              textSecondary={ticket.price}
+              height="10rem"
+              shadow
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .container {
+      display: flex;
+      gap: 3rem;
+    }
+    .col-small {
+      flex: 1;
+    }
+    .col-big {
+      flex: 1.5;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    h1 {
+      line-height: 3rem;
+      margin-bottom: 3rem;
+    }
+    h3 {
+      margin-top: 5rem;
+      margin-bottom: 3rem;
+    }
+    a {
+      margin-top: 2rem;
+    }
+    img {
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      img {
+        margin-top: 2rem;
+        margin-bottom: 0rem;
+      }
+      h1 {
+        margin-bottom: 2rem;
+      }
+      a {
+        margin-top: 0rem;
+      }
+    }
+  </style>
+</Layout>

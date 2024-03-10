@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="Pravila ponašanja">
+  <div class="hero">
+    <h1>Iznajmljivanje bicikli</h1>
+    <p>
+      Svedoci smo da je zaštita životne sredine danas globalna svetska tema o
+      kojoj se mnogo govori, a Prirodnjački centar u Svilajncu, kao društveno
+      odgovorna institucija je skrenuo pažnju na ovaj globalni problem i u isto
+      vreme delovao lokalno uvođenjem sistema za iznajmljivanje bicikli koji smo
+      nazvali SVI-BAJK. Na ovaj način potrudili smo se da podignemo svest
+      građana i skrenemo pažnju na ovaj problem, a u isto vreme našim
+      posetiocima olakšamo kretanje i turistički obilazak Svilajnca i okoline.
+    </p>
+    <a href="opsti-uslovi">
+      <Button text="Opšti uslovi" outlined />
+    </a>
+  </div>
+</Layout>
+<style>
+  .hero {
+    background-image: url("/bikes.jpeg");
+    margin-left: calc(-1 * var(--main-horizontal-padding));
+    margin-right: calc(-1 * var(--main-horizontal-padding));
+    margin-top: calc(-1 * var(--main-vertical-padding));
+    margin-bottom: calc(-1 * var(--main-vertical-padding));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 6rem var(--main-horizontal-padding) 10rem
+      var(--main-horizontal-padding);
+  }
+  h1,
+  p {
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+</style>

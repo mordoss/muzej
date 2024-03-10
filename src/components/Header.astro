@@ -1,0 +1,85 @@
+---
+import Logo from "./Logo.astro";
+import { createSlug } from "../utils/helpers";
+
+const { mainLinks } = Astro.props;
+---
+
+<header>
+  <Logo />
+  <ul>
+    {
+      mainLinks.map((link: string) => (
+        <li>
+          <a href={createSlug(link)}>{link}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <img src="hamburger.svg" alt="meni" class="hamburger" />
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem var(--main-horizontal-padding);
+    position: relative;
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+  }
+  ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+  a {
+    color: var(--text-main);
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .hamburger {
+    height: 2rem;
+    width: auto;
+    cursor: pointer;
+    display: none;
+  }
+  @media (max-width: 768px) {
+    header {
+      padding: 0.5rem var(--main-horizontal-padding);
+    }
+    .hamburger {
+      display: block;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background-color: var(--bg);
+      position: absolute;
+      top: -16rem;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      z-index: 1;
+      border-bottom: 1px solid var(--text-main);
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      transition: all 0.5s ease;
+    }
+    ul.show {
+      top: 4rem;
+    }
+  }
+</style>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const links = document.querySelector("ul");
+  hamburger?.addEventListener("click", () => {
+    links?.classList.toggle("show");
+  });
+  addEventListener("scroll", () => {
+    links?.classList.remove("show");
+  });
+</script>
