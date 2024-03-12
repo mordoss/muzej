@@ -1,5 +1,7 @@
+// @ts-nocheck
+
 import { useState, type FC, useEffect, useRef } from 'react'
-import './Dropdown.css'
+import '../styles/Dropdown.css'
 
 interface IProps {
   options: string[]
@@ -11,7 +13,7 @@ const Dropdown: FC<IProps> = ({ options }) => {
   const menuRef = useRef(null)
   const buttonRef = useRef(null)
 
-  const handleOutsideClick = (event) => {
+  const handleOutsideClick = (event: any) => {
     if (
       menuRef.current &&
       !menuRef.current.contains(event.target) &&

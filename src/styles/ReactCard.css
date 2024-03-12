@@ -1,0 +1,59 @@
+.react-card {
+  background-color: var(--action-main);
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.rest-options {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.show {
+  max-height: 100rem;
+}
+
+.card-heading,
+.react-card {
+  color: var(--text-white);
+}
+
+.react-card button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-white);
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.react-card button:hover {
+  border: 1px solid var(--text-white);
+}
+
+.white {
+  background-color: var(--text-white) !important;
+}
+
+.react-card ul {
+  margin-left: 1rem;
+}
+
+.react-card ul:not(.rest-options) {
+  margin-top: 1.5rem;
+}
+
+.react-card li {
+  margin-bottom: 0.5rem;
+}

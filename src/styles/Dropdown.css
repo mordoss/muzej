@@ -59,7 +59,7 @@
 
 .rotate {
   transform: rotate(180deg);
-  background-color: var(--text-main) !important;
+  background-color: var(--text-main);
 }
 
 .open {

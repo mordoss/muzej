@@ -7,11 +7,10 @@ const {
   height,
   options,
   heading,
-  details,
   light,
   price,
   index,
-} = Astro.props;
+} = Astro.props
 ---
 
 <div
@@ -23,7 +22,7 @@ const {
 >
   {
     heading && (
-      <h4 class:list={[light && "text-dark"]} id={heading}>
+      <h4 class:list={[light && 'text-dark']} id={heading}>
         {heading}
       </h4>
     )
@@ -33,24 +32,16 @@ const {
   {
     options && (
       <ul class={index}>
-        {options
-          .slice(0, details ? 2 : options.length)
-          .map((option: string) => (
-            <>
-              <li class:list={[light && "text-dark"]}>{option}</li>
-              {!light && <br />}
-            </>
-          ))}
+        {options.map((option: string) => (
+          <>
+            <li class:list={[light && 'text-dark']}>• {option}</li>
+            {!light && <br />}
+          </>
+        ))}
       </ul>
     )
   }
-  {
-    details && (
-      <a class="details" id={index}>
-        Više detalja <img src="arrow-down.svg" alt="strelica" />
-      </a>
-    )
-  }
+
   {price && <p class="text-dark">{price}</p>}
 </div>
 <style define:vars={{ backgroundColor, height }}>
@@ -62,8 +53,9 @@ const {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
   }
- 
+
   p {
     color: var(--text-white);
     font-size: 1rem;
@@ -74,8 +66,7 @@ const {
     color: var(--text-white);
   }
   ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
+     margin-left: 1rem;
   }
   a img {
     margin-left: 0.5rem;

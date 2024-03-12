@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
+import ReactCard from "../components/ReactCard.tsx";
 import Card from "../components/Card.astro";
 import ImageSlider from "../components/ImageSlider.astro";
 import { colors } from "../utils/constants";
@@ -11,7 +12,6 @@ const ageOptions = [
     options: [
       "Dobrodošlica i doček slavljenika i gostiju.",
       "Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme",
-      ,
       "Slavljenik i gosti prvo obilaze izložbu „Životinje Afrike“ i Dino park sa izložbom u vulkanu.",
       "Zatim sledi ručak u našem restoranu- švedski sto",
       "Dino film „Dobri dinosaurus“ u bioskopu Prirodnjačkog centra",
@@ -139,16 +139,8 @@ const groupMeals = [
     <h3 class="text-center">Organizacija dečijeg rođendana</h3>
     <div class="grid grid-2">
       {
-        ageOptions.map((age, index) => (
-          <Card
-            backgroundColor={colors.actionMain}
-            heading={age.age}
-            options={age.options}
-            height="18rem"
-            shadow
-            details
-            index={index}
-          />
+        ageOptions.map((age) => (
+          <ReactCard heading={age.age} options={age.options} client:load/>
         ))
       }
     </div>
@@ -183,7 +175,7 @@ const groupMeals = [
       ]}
       shadow
       light
-      price=""
+      price=" "
       height="20rem"
     />
     <div class="slider">
