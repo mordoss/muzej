@@ -1,56 +1,56 @@
 ---
-import Logo from "./Logo.astro";
-import FooterLinks from "./FooterLinks.astro";
+import Logo from './Logo.astro'
+import FooterLinks from './FooterLinks.astro'
 
-const { mainLinks } = Astro.props;
+const { mainLinks } = Astro.props
 const linksThird = [
-  "podaci o preduzeću",
-  "osnivački akt",
-  "Protokol postupanja",
-];
+    'podaci o preduzeću',
+    'osnivački akt',
+    'Protokol postupanja',
+]
 const linksFirst = [
-  "izložbe",
-  "dinosville",
-  "restoran",
-  "suvenirnica",
-  "igraonica",
-];
+    'izložbe',
+    'dinosville',
+    'restoran',
+    'suvenirnica',
+    'igraonica',
+]
 const linksSecond = [
-  "Dino kamp",
-  "Grupne posete",
-  "Organizacija dečijih rođendana",
-  "Organizacija događaja",
-];
+    'Dino kamp',
+    'Grupne posete',
+    'Organizacija dečijih rođendana',
+    'Organizacija događaja',
+]
 ---
 
 <footer>
-  <Logo light />
-  <div class="links">
-    <FooterLinks links={mainLinks} hide />
-    <FooterLinks links={linksFirst} hide />
-    <FooterLinks links={linksSecond} hide />
-    <FooterLinks links={linksThird} pdf />
-  </div>
+    <Logo light />
+    <div class="links">
+        <FooterLinks links={mainLinks} hide />
+        <FooterLinks links={linksFirst} hide />
+        <FooterLinks links={linksSecond} hide />
+        <FooterLinks links={linksThird} pdf />
+    </div>
 </footer>
 
 <style>
-  footer {
-    display: block;
-    width: 100%;
-    padding: var(--main-vertical-padding)
-      calc(var(--main-horizontal-padding) * 2);
-    background-color: var(--footer-bg);
-  }
-  .links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5rem;
-    max-width: var(--max-width);
-  }
-  @media (max-width: 768px) {
-    .links {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    footer {
+        display: block;
+        width: 100%;
+        padding: var(--main-vertical-padding)
+            calc(var(--main-horizontal-padding) * 2);
+        background-color: var(--footer-bg);
     }
-  }
+    .links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+        max-width: var(--max-width);
+    }
+    @media (max-width: 768px) {
+        .links {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
 </style>
