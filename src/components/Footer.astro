@@ -4,53 +4,56 @@ import FooterLinks from './FooterLinks.astro'
 
 const { mainLinks } = Astro.props
 const linksThird = [
-    'podaci o preduzeću',
-    'osnivački akt',
-    'Protokol postupanja',
+  'podaci o preduzeću',
+  'osnivački akt',
+  'Protokol postupanja',
 ]
 const linksFirst = [
-    'izložbe',
-    'dinosville',
-    'restoran',
-    'suvenirnica',
-    'igraonica',
+  'izložbe',
+  'dinosville',
+  'restoran',
+  'suvenirnica',
+  'igraonica',
 ]
 const linksSecond = [
-    'Dino kamp',
-    'Grupne posete',
-    'Organizacija dečijih rođendana',
-    'Organizacija događaja',
+  'Dino kamp',
+  'Grupne posete',
+  'Organizacija dečijih rođendana',
+  'Organizacija događaja',
 ]
 ---
 
 <footer>
+  <div class="content">
     <Logo light />
     <div class="links">
-        <FooterLinks links={mainLinks} hide />
-        <FooterLinks links={linksFirst} hide />
-        <FooterLinks links={linksSecond} hide />
-        <FooterLinks links={linksThird} pdf />
+      <FooterLinks links={mainLinks} hide />
+      <FooterLinks links={linksFirst} hide />
+      <FooterLinks links={linksSecond} hide />
+      <FooterLinks links={linksThird} pdf />
     </div>
+  </div>
 </footer>
 
 <style>
-    footer {
-        display: block;
-        width: 100%;
-        padding: var(--main-vertical-padding)
-            calc(var(--main-horizontal-padding) * 2);
-        background-color: var(--footer-bg);
-    }
+  footer {
+    display: block;
+    width: 100%;
+    padding: var(--main-vertical-padding) calc(var(--main-horizontal-padding));
+    background-color: var(--footer-bg);
+  }
+  .content {
+    max-width: var(--max-width);
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+  }
+  @media (max-width: 768px) {
     .links {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 5rem;
-        max-width: var(--max-width);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
-    @media (max-width: 768px) {
-        .links {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-    }
+  }
 </style>
