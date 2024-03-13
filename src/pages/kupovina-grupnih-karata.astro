@@ -21,14 +21,14 @@ const remarkSecond =
   <h1>Zahtev za grupnu posetu</h1>
    <form>
     <div class="grid-2">
-      <Input type="date" label="Datum planirane posete:" />
+      <Input type="date" label="Datum planirane posete:"/>
       <Input type="time" label="Željeno vreme posete:" />
       <Input
         type="number"
         label="Ukupan broj posetilaca:"
         placeholder="Unesite ukupan broj posetilaca"
       />
-      <Input type="number" label="Uzrast posetilaca:" />
+      <Input type="number" label="Uzrast posetilaca:" placeholder="Unesite uzrast broj posetilaca"/>
       <Checkbox label="Da li želite ručak u restoranu?" />
       <a href="zahtev-za-rucak">Popunite zahtev za ručak u restoranu Centra.</a>
       <Checkbox label="Da li želite dodatni sadržaj (bioskop/predstavu)?" />
@@ -88,7 +88,7 @@ const remarkSecond =
         label="Kontakt telefon:"
         placeholder="Unesite kontakt telefon"
       />
-      <Input type="text" label="Način plaćanja:" placeholder="" />
+      <Input type="text" label="Način plaćanja:" placeholder="Unesite način plaćanja:" />
     </div>
     <h4>Podaci o instituciji / školi / ustanovi koja dolazi posetu</h4>
     <div class="grid-2">
@@ -126,7 +126,7 @@ const remarkSecond =
     <p>{remarkSecond}</p>
     <Button text="Pošaljite zahtev" marginTop="4rem" wide />
   </form>  
-  <TicketsForm client:load/>
+  <!-- <TicketsForm client:load/> -->
 </Layout>
 <style>
   .grid-2,

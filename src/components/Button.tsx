@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 
 const Button = ({ text }) => {

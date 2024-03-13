@@ -39,4 +39,14 @@ const { type, label, placeholder } = Astro.props
   textarea {
     height: 6rem;
   }
+  @media (max-width: 768px) {
+    input::placeholder,
+  textarea::placeholder {
+    font-size: 0.8rem;
+  }input,
+  textarea {
+    padding: 0.5rem 0.5rem;
+  }
+
+
 </style>
