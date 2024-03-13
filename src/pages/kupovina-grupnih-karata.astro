@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Input from "../components/Input.astro";
 import Button from "../components/Button.astro";
 import Checkbox from "../components/Checkbox.astro";
+import TicketsForm from '../components/TicketsForm'
 
 const remark =
   "Trajanje obilaska Centra ograničeno je na 90 minuta osim u slučaju organizovanog ručka u restoranu Centra, kada je poseta ograničena na 120 minuta. Za nepoštovanje dogovorenog termina posete, Centar ne garantuje ulazak i obilazak (bez obzira na izvršenu uplatu).";
@@ -18,7 +19,7 @@ const remarkSecond =
 
 <Layout title="Zahtev za grupnu posetu">
   <h1>Zahtev za grupnu posetu</h1>
-  <form>
+   <form>
     <div class="grid-2">
       <Input type="date" label="Datum planirane posete:" />
       <Input type="time" label="Željeno vreme posete:" />
@@ -124,7 +125,8 @@ const remarkSecond =
     <p>NAPOMENA:</p>
     <p>{remarkSecond}</p>
     <Button text="Pošaljite zahtev" marginTop="4rem" wide />
-  </form>
+  </form>  
+  <TicketsForm client:load/>
 </Layout>
 <style>
   .grid-2,
