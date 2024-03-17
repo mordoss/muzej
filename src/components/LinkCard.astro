@@ -12,6 +12,7 @@ const {
   small,
   smallest,
   biggerPadding,
+  zoomBg
 } = Astro.props;
 
 const img = `url(/${location}/${link}.jpeg)`;
@@ -22,6 +23,7 @@ const img = `url(/${location}/${link}.jpeg)`;
     square && "square",
     height && "height",
     biggerPadding && "biggerPadding",
+    zoomBg && 'zoomBg'
   ]}
   class="container"
 >
@@ -102,6 +104,12 @@ const img = `url(/${location}/${link}.jpeg)`;
   }
   p {
     margin-bottom: auto;
+  }
+  .zoomBg{
+    background-size: 170%;
+  }
+  .zoomBg:hover {
+    background-size: 180%;
   }
   @media (max-width: 768px) {
     .container {

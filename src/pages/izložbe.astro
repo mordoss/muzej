@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import LinkCard from "../components/LinkCard.astro";
+import Layout from '../layouts/Layout.astro'
+import LinkCard from '../components/LinkCard.astro'
 const paragraphs = [
-  "Prirodnjački centar Srbije Svilajnac predstavlja spoj nauke, obrazovanja, zabave i turizma na jednom mestu, na vrlo specifičan način. Takav koncept čini ga jedinstvenim u ovom delu Evrope. Otvoren je 29. juna 2015. godine svečanim programom kome je prisustvovalo nekoliko hiljada posetilaca.",
-  "Atraktivnost Prirodnjačkog centra ogleda se u jedinstvu velikog izložbenog (muzejskog) prostora i zabavnog dino-parka na otvorenom. Muzejski deo Prirodnjačkog centra čini devet tematskih izložbi, koje se nalaze u samom objektu, dok se jedna izložba nalazi u parku, u unutrašnjosti modela vulkana.",
-  "Na izradi svih postavki učestvovali su stručnjaci Prirodnjačkog muzeja iz Beograda, Rudarsko-geološkog fakulteta Univerziteta u Beogradu i kustosi Prirodnjačkog centra u Svilajncu.",
-];
+  'Prirodnjački centar Srbije Svilajnac predstavlja spoj nauke, obrazovanja, zabave i turizma na jednom mestu, na vrlo specifičan način. Takav koncept čini ga jedinstvenim u ovom delu Evrope. Otvoren je 29. juna 2015. godine svečanim programom kome je prisustvovalo nekoliko hiljada posetilaca.',
+  'Atraktivnost Prirodnjačkog centra ogleda se u jedinstvu velikog izložbenog (muzejskog) prostora i zabavnog dino-parka na otvorenom. Muzejski deo Prirodnjačkog centra čini devet tematskih izložbi, koje se nalaze u samom objektu, dok se jedna izložba nalazi u parku, u unutrašnjosti modela vulkana.',
+  'Na izradi svih postavki učestvovali su stručnjaci Prirodnjačkog muzeja iz Beograda, Rudarsko-geološkog fakulteta Univerziteta u Beogradu i kustosi Prirodnjačkog centra u Svilajncu.',
+]
 ---
 
 <Layout title="Izložbe"
@@ -19,12 +19,7 @@ const paragraphs = [
     ))
   }
   <div class="grid grid-3">
-    <LinkCard
-      location="exhibitions"
-      link="svet-dinosaurusa"
-      text="Svet dinosaurusa"
-      small
-    />
+    <LinkCard location="exhibitions" link="svet-dinosaurusa" text="Svet dinosaurusa" small zoomBg />
     <LinkCard
       location="exhibitions"
       link="geoloski-vremeplov"
@@ -41,13 +36,7 @@ const paragraphs = [
     />
   </div>
   <div class="grid grid-3">
-  
-    <LinkCard
-      location="exhibitions"
-      link="zivotinje-afrike"
-      text="Životinje Afrike"
-      small
-    />
+    <LinkCard location="exhibitions" link="zivotinje-afrike" text="Životinje Afrike" small zoomBg />
     <LinkCard
       location="exhibitions"
       link="biodiverzitet-srbije"
@@ -56,29 +45,17 @@ const paragraphs = [
       small
     />
     <LinkCard
-    location="exhibitions"
-    link="geodiverzitet-srbije"
-    text="Geodiverzitet Srbije"
-    square
-    small
-  />
-  </div>
-  <div class="grid grid-3">
-  
-    <LinkCard location="exhibitions" link="vulkan" text="Vulkan" small />
-    <LinkCard
       location="exhibitions"
-      link="minerali"
-      text="Fluorescentni minerali"
+      link="geodiverzitet-srbije"
+      text="Geodiverzitet Srbije"
       square
       small
     />
-    <LinkCard
-      location="exhibitions"
-      link="mamut"
-      text='Mamut "Kika"'
-      small
-    />
+  </div>
+  <div class="grid grid-3">
+    <LinkCard location="exhibitions" link="vulkan" text="Vulkan" small />
+    <LinkCard location="exhibitions" link="minerali" text="Fluorescentni minerali" square small />
+    <LinkCard location="exhibitions" link="mamut" text='Mamut "Kika"' small />
   </div>
 </Layout>
 <style>
