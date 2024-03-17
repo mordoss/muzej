@@ -37,6 +37,8 @@
   border-bottom-right-radius: 0.25rem;
   border: 1px solid var(--border-form);
   border-top: none;
+  width: 100%;
+
 }
 
 .dropdown-content button {
@@ -45,6 +47,12 @@
   font-size: 1rem;
   color: var(--border-form);
   cursor: pointer;
+  text-align: left;
+}
+.dropdown-content button:hover {
+  
+  color: var(--hover);
+  
 }
 
 .arrow {

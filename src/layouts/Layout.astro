@@ -1,13 +1,14 @@
 ---
-import "@fontsource-variable/noto-sans";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { colors } from "../utils/constants";
+import '@fontsource-variable/noto-sans'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { colors } from '../utils/constants'
 interface Props {
-  title: string;
+  title: string
+  noMarginTopOnPhone?: boolean
 }
-const { title } = Astro.props;
-const mainLinks = ["o nama", "ulaznice", "kupovina grupnih karata", "kontakt"];
+const { title, noMarginTopOnPhone } = Astro.props
+const mainLinks = ['o nama', 'ulaznice', 'kupovina grupnih karata', 'kontakt']
 ---
 
 <!doctype html>
@@ -25,7 +26,7 @@ const mainLinks = ["o nama", "ulaznice", "kupovina grupnih karata", "kontakt"];
     <main>
       <slot />
     </main>
-    <Footer mainLinks={mainLinks} />
+    <Footer mainLinks={mainLinks} noMarginTopOnPhone={noMarginTopOnPhone} />
   </body>
 </html>
 <style is:global define:vars={{ ...colors }}>
@@ -42,7 +43,6 @@ const mainLinks = ["o nama", "ulaznice", "kupovina grupnih karata", "kontakt"];
     --link: #3e99c8;
     --main-horizontal-padding: 12.5rem;
     --main-vertical-padding: 5rem;
-    --max-width: 1440px;
   }
   @media (max-width: 1200px) {
     :root {
@@ -71,9 +71,7 @@ const mainLinks = ["o nama", "ulaznice", "kupovina grupnih karata", "kontakt"];
     margin-top: 2rem;
     margin-bottom: 1.5rem;
   }
-  .grid-2,
-  .grid-3 {
-    display: grid;
+  .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .grid-3 {
@@ -106,7 +104,7 @@ const mainLinks = ["o nama", "ulaznice", "kupovina grupnih karata", "kontakt"];
   }
   body {
     background-color: var(--bg);
-    font-family: "Noto Sans Variable", sans-serif;
+    font-family: 'Noto Sans Variable', sans-serif;
     min-height: 100vh;
   }
   *,

@@ -1,34 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Input from "../components/Input.astro";
-import Button from "../components/Button.astro";
-import Checkbox from "../components/Checkbox.astro";
+import Layout from '../layouts/Layout.astro'
+import Input from '../components/Input.astro'
+import Button from '../components/Button.astro'
+import Checkbox from '../components/Checkbox.astro'
 import TicketsForm from '../components/TicketsForm'
 
 const remark =
-  "Trajanje obilaska Centra ograničeno je na 90 minuta osim u slučaju organizovanog ručka u restoranu Centra, kada je poseta ograničena na 120 minuta. Za nepoštovanje dogovorenog termina posete, Centar ne garantuje ulazak i obilazak (bez obzira na izvršenu uplatu).";
+  'Trajanje obilaska Centra ograničeno je na 90 minuta osim u slučaju organizovanog ručka u restoranu Centra, kada je poseta ograničena na 120 minuta. Za nepoštovanje dogovorenog termina posete, Centar ne garantuje ulazak i obilazak (bez obzira na izvršenu uplatu).'
 const rules = [
-  "- Grupnu posetu je neophodno najaviti najkasnije nedelju dana pre planiranog dolaska;",
-  "- Željeni termin posete određuje se u zavisnosti od slobodnih termina;",
-  "- Plaćanje se vrši avansno najkasnije dan pred dolazak ili gotovinom na bileternici;",
-  "- Dokaz o avansnoj uplati neophodno je pokazati na biletarnici Prirodnjačkog centra pre ulaska;",
-];
+  '- Grupnu posetu je neophodno najaviti najkasnije nedelju dana pre planiranog dolaska;',
+  '- Željeni termin posete određuje se u zavisnosti od slobodnih termina;',
+  '- Plaćanje se vrši avansno najkasnije dan pred dolazak ili gotovinom na bileternici;',
+  '- Dokaz o avansnoj uplati neophodno je pokazati na biletarnici Prirodnjačkog centra pre ulaska;',
+]
 const remarkSecond =
-  "Podnošenje ovog zahteva istovremeno predstavlja i podnošenje zahteva za izradu e-fakture za pravno lice - podnosioca zahteva. To podrazumeva sledeću proceduru: evidencija prometa na fiskalnoj kasi, refundacija tog fiskalnog isečka u istom danu i izrada e-fakture sa istim datumom prometa i iznosom prometa. Procedura će se sprovoditi sve do trenutka kada se programski omogući da evidencija prometa na fiskalnoj kasi podrazumeva i automatsku izradu e-fakture, odnosno dođe do drugih uputstava nadležnih državnih organa.";
+  'Podnošenje ovog zahteva istovremeno predstavlja i podnošenje zahteva za izradu e-fakture za pravno lice - podnosioca zahteva. To podrazumeva sledeću proceduru: evidencija prometa na fiskalnoj kasi, refundacija tog fiskalnog isečka u istom danu i izrada e-fakture sa istim datumom prometa i iznosom prometa. Procedura će se sprovoditi sve do trenutka kada se programski omogući da evidencija prometa na fiskalnoj kasi podrazumeva i automatsku izradu e-fakture, odnosno dođe do drugih uputstava nadležnih državnih organa.'
 ---
 
 <Layout title="Zahtev za grupnu posetu">
   <h1>Zahtev za grupnu posetu</h1>
-   <form>
+  <form>
     <div class="grid-2">
-      <Input type="date" label="Datum planirane posete:"/>
+      <Input type="date" label="Datum planirane posete:" />
       <Input type="time" label="Željeno vreme posete:" />
       <Input
         type="number"
         label="Ukupan broj posetilaca:"
         placeholder="Unesite ukupan broj posetilaca"
       />
-      <Input type="number" label="Uzrast posetilaca:" placeholder="Unesite uzrast broj posetilaca"/>
+      <Input
+        type="number"
+        label="Uzrast posetilaca:"
+        placeholder="Unesite uzrast broj posetilaca"
+      />
       <Checkbox label="Da li želite ručak u restoranu?" />
       <a href="zahtev-za-rucak">Popunite zahtev za ručak u restoranu Centra.</a>
       <Checkbox label="Da li želite dodatni sadržaj (bioskop/predstavu)?" />
@@ -88,7 +92,11 @@ const remarkSecond =
         label="Kontakt telefon:"
         placeholder="Unesite kontakt telefon"
       />
-      <Input type="text" label="Način plaćanja:" placeholder="Unesite način plaćanja:" />
+      <Input
+        type="text"
+        label="Način plaćanja:"
+        placeholder="Unesite način plaćanja:"
+      />
     </div>
     <h4>Podaci o instituciji / školi / ustanovi koja dolazi posetu</h4>
     <div class="grid-2">
@@ -125,7 +133,7 @@ const remarkSecond =
     <p>NAPOMENA:</p>
     <p>{remarkSecond}</p>
     <Button text="Pošaljite zahtev" marginTop="4rem" wide />
-  </form>  
+  </form>
   <!-- <TicketsForm client:load/> -->
 </Layout>
 <style>
@@ -142,5 +150,10 @@ const remarkSecond =
   }
   h4 {
     margin-top: 5rem;
+  }
+  @media (max-width: 768px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

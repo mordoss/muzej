@@ -1,9 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
-import Card from "../components/Card.astro";
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button.astro'
+import Card from '../components/Card.astro'
 
-import { colors, tickets } from "../utils/constants";
+import { colors, tickets } from '../utils/constants'
+
+const paragraphes = [
+  'Uz kupljenu kartu za Prirodnjački centar, iznajmljivanje bicikli je BESPLATNO.',
+  'Uz kupljenu kartu za Prirodnjački centar, ulaz na gradske bazene je BESPLATAN.',
+]
 ---
 
 <Layout title="Ulaznice">
@@ -16,18 +21,17 @@ import { colors, tickets } from "../utils/constants";
       <a href="/pravila-ponasanja">
         <Button text="Pravila ponašanja" outlined /></a
       >
-      <div>
-        <img src="/bicycle.svg" alt="bicikla" />
-        <p>
-          Uz kupljenu kartu za Prirodnjački centar, ulaz na gradske bazene je
-          BESPLATAN.
-        </p>
-      </div>
+
       <div>
         <img src="/pool.svg" alt="bazen" />
         <p>
-          Uz kupljenu kartu za Prirodnjački centar, iznajmljivanje bicikli je
-          BESPLATNO.
+          {paragraphes[0]}
+        </p>
+      </div>
+      <div>
+        <img src="/bicycle.svg" alt="bicikla" />
+        <p>
+          {paragraphes[1]}
         </p>
       </div>
       <a href="iznajmite-bicikl"> <Button text="Iznajmite bicikl" /></a>
@@ -97,7 +101,7 @@ import { colors, tickets } from "../utils/constants";
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
       }
       img {
         margin-top: 2rem;

@@ -1,53 +1,49 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
-import LinkCard from "../components/LinkCard.astro";
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button.astro'
+import LinkCard from '../components/LinkCard.astro'
 
 const paragraphes = [
-  "Pored svoje osnovne delatnosti, Prirodnjački centar pruža i uslugu organizacije: konferencija, kongresa, seminara, simpozijuma, promocija, naučnih i profesionalnih skupova.",
-  "Oplemenite vaš sledeći događaj uz jedinstvenu kombinaciju nauke, obrazovanja i zabave u Prirodnjačkom centru. Pružamo inspirativan prostor i profesionalnu podršku za organizaciju konferencija, seminara ili promocija, stvarajući nezaboravno iskustvo za sve učesnike.",
-];
+  'Pored svoje osnovne delatnosti, Prirodnjački centar pruža i uslugu organizacije: konferencija, kongresa, seminara, simpozijuma, promocija, naučnih i profesionalnih skupova.',
+  'Oplemenite vaš sledeći događaj uz jedinstvenu kombinaciju nauke, obrazovanja i zabave u Prirodnjačkom centru. Pružamo inspirativan prostor i profesionalnu podršku za organizaciju konferencija, seminara ili promocija, stvarajući nezaboravno iskustvo za sve učesnike.',
+]
 
 const cards = [
-  { heading: "Učionice", capacity: "(kapaciteta 25 mesta)" },
-  { heading: "Računarsku salu", capacity: "(kapaciteta 10 mesta)" },
+  { heading: 'Učionice', capacity: '(kapaciteta 25 mesta)' },
+  { heading: 'Računarsku salu', capacity: '(kapaciteta 10 mesta)' },
   {
-    heading: "Multimedijalnu salu",
-    capacity: "(kapaciteta 60 mesta)",
+    heading: 'Multimedijalnu salu',
+    capacity: '(kapaciteta 60 mesta)',
   },
   {
-    heading: "Organizaciju koktela",
-    capacity: "(u prostoru kafea Prirodnjačkog centra)",
+    heading: 'Organizaciju koktela',
+    capacity: '(u prostoru kafea Prirodnjačkog centra)',
   },
-];
+]
 const checks = [
-  "Obezbeđena tehnička podrška sa pratećom opremom i simultanim prevođenjem",
-  "Mogućnost odlaganja garderobe i poklona",
-  "Obezbeđen parking",
-];
+  'Obezbeđena tehnička podrška sa pratećom opremom i simultanim prevođenjem',
+  'Mogućnost odlaganja garderobe i poklona',
+  'Obezbeđen parking',
+]
 const offers = [
-  "Organizacija koktela dobrodšlice, servis za VIP goste;",
-  "Organizovanje turističkog programa: obilazak izložbi Prirodnjačkog centra, ekskurzije do obližnjih destinacija;",
-  "Organizovanje poklon paketa;",
-  "Organizovanje smeštaja; \n (mogućnost semštaja u domu Poljoprivredno-veterinarske škole za vreme školskih raspusta)",
-  "Drugi posebni programi u dogovoru sa korisnikom.",
-];
+  'Organizacija koktela dobrodšlice, servis za VIP goste;',
+  'Organizovanje turističkog programa: obilazak izložbi Prirodnjačkog centra, ekskurzije do obližnjih destinacija;',
+  'Organizovanje poklon paketa;',
+  'Organizovanje smeštaja; \n (mogućnost semštaja u domu Poljoprivredno-veterinarske škole za vreme školskih raspusta)',
+  'Drugi posebni programi u dogovoru sa korisnikom.',
+]
 ---
 
-<Layout title="Organizacija događaja"
+<Layout title="Organizacija događaja" noMarginTopOnPhone
   ><div class="container">
     <div class="hero">
-      <h1 class="text-center text-white">
-        Organizacija događaja u Prirodnjačkom centru
-      </h1>
+      <h1 class="text-center text-white">Organizacija događaja u Prirodnjačkom centru</h1>
       <p class="text-white text-center">{paragraphes[0]}</p>
       <a href="/ivana">
         <Button text="Kontaktirajte nas" marginTop="1.5rem" />
       </a>
     </div>
-    <h1 class="text-center">
-      Za događaje koje organizuje, Prirodnjački centar obezbeđuje
-    </h1>
+    <h1 class="text-center">Za događaje koje organizuje, Prirodnjački centar obezbeđuje</h1>
     <div class="grid grid-2">
       {
         cards.map((card, i) => (
@@ -97,7 +93,7 @@ const offers = [
 <style>
   .hero {
     height: 30rem;
-    background-image: url("/happening.jpeg");
+    background-image: url('/happening.jpeg');
     margin-left: calc(-1 * var(--main-horizontal-padding));
     margin-top: calc(-1 * var(--main-vertical-padding));
     margin-right: calc(-1 * var(--main-horizontal-padding));
@@ -108,8 +104,8 @@ const offers = [
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     background-position: center;
-    padding: 6rem var(--main-horizontal-padding) 10rem
-      var(--main-horizontal-padding);
+    background-repeat: no-repeat;
+    padding: 6rem var(--main-horizontal-padding) 10rem var(--main-horizontal-padding);
     margin-bottom: 5rem;
   }
 
@@ -124,7 +120,7 @@ const offers = [
     gap: 4rem;
   }
   .offers-img {
-    background-image: url("/happening/building.jpeg");
+    background-image: url('/happening/building.jpeg');
     height: 288px;
     min-width: 398px;
     background-position: center;
@@ -140,7 +136,7 @@ const offers = [
   }
   .down-hero {
     height: 18rem;
-    background-image: url("/happening-bottom.jpeg");
+    background-image: url('/happening-bottom.jpeg');
     margin-top: 5rem;
     margin-left: calc(-1 * var(--main-horizontal-padding));
     margin-bottom: calc(-1 * var(--main-vertical-padding));
@@ -152,15 +148,13 @@ const offers = [
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-position: center;
-    padding: 6rem var(--main-horizontal-padding) 10rem
-      var(--main-horizontal-padding);
+    padding: 6rem var(--main-horizontal-padding) 10rem var(--main-horizontal-padding);
   }
   @media (max-width: 768px) {
     .hero {
-      padding: 3rem var(--main-horizontal-padding) 3rem
-        var(--main-horizontal-padding);
-      height: 24rem;
+      padding: 3rem var(--main-horizontal-padding) 3rem var(--main-horizontal-padding);
       margin-bottom: 2rem;
+      height: auto;
     }
 
     h4 {
@@ -189,12 +183,10 @@ const offers = [
       margin-top: 2rem;
     }
     .down-hero {
-      height: 16rem;
       margin-top: 2rem;
       flex-direction: column;
       gap: 1rem;
-      padding: 3rem var(--main-horizontal-padding) 3rem
-        var(--main-horizontal-padding);
+      padding: 3rem var(--main-horizontal-padding) 3rem var(--main-horizontal-padding);
     }
   }
 </style>

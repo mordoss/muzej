@@ -2,19 +2,9 @@
 import Logo from './Logo.astro'
 import FooterLinks from './FooterLinks.astro'
 
-const { mainLinks } = Astro.props
-const linksThird = [
-  'podaci o preduzeću',
-  'osnivački akt',
-  'Protokol postupanja',
-]
-const linksFirst = [
-  'izložbe',
-  'dinosville',
-  'restoran',
-  'suvenirnica',
-  'igraonica',
-]
+const { mainLinks, noMarginTopOnPhone } = Astro.props
+const linksThird = ['podaci o preduzeću', 'osnivački akt', 'Protokol postupanja']
+const linksFirst = ['izložbe', 'dinosville', 'restoran', 'suvenirnica', 'igraonica']
 const linksSecond = [
   'Dino kamp',
   'Grupne posete',
@@ -23,7 +13,7 @@ const linksSecond = [
 ]
 ---
 
-<footer>
+<footer class:list={[noMarginTopOnPhone && 'noTopMargin']}>
   <div class="content">
     <Logo light />
     <div class="links">
@@ -41,6 +31,7 @@ const linksSecond = [
     width: 100%;
     padding: var(--main-vertical-padding) calc(var(--main-horizontal-padding));
     background-color: var(--footer-bg);
+    margin-top: 4rem;
   }
   .content {
     max-width: var(--max-width);
@@ -54,6 +45,9 @@ const linksSecond = [
     .links {
       margin-top: 1rem;
       margin-bottom: 1rem;
+    }
+    .noTopMargin {
+      margin-top: 0;
     }
   }
 </style>

@@ -1,134 +1,128 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
-import ReactCard from "../components/ReactCard.tsx";
-import Card from "../components/Card.astro";
-import ImageSlider from "../components/ImageSlider.astro";
-import { colors } from "../utils/constants";
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button.astro'
+import ReactCard from '../components/ReactCard.tsx'
+import Card from '../components/Card.astro'
+import ImageSlider from '../components/ImageSlider.astro'
+import { colors } from '../utils/constants'
 
 const ageOptions = [
   {
-    age: "Za uzrast do 4 godine:",
+    age: 'Za uzrast do 4 godine:',
     options: [
-      "Dobrodošlica i doček slavljenika i gostiju.",
-      "Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme",
-      "Slavljenik i gosti prvo obilaze izložbu „Životinje Afrike“ i Dino park sa izložbom u vulkanu.",
-      "Zatim sledi ručak u našem restoranu- švedski sto",
-      "Dino film „Dobri dinosaurus“ u bioskopu Prirodnjačkog centra",
-      "Muzička animacija (Pingvin ples, Pačiji ples, Baby shark, Kad si srećan, Ram sam sam, Majmunski ples, Chocolate...)",
-      "Igranje u igraonici",
-      "Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)",
-      "Fotografisanje sa slavljenikom",
-      "Ispraćanje gostiju",
+      'Dobrodošlica i doček slavljenika i gostiju.',
+      'Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme',
+      'Slavljenik i gosti prvo obilaze izložbu „Životinje Afrike“ i Dino park sa izložbom u vulkanu.',
+      'Zatim sledi ručak u našem restoranu- švedski sto',
+      'Dino film „Dobri dinosaurus“ u bioskopu Prirodnjačkog centra',
+      'Muzička animacija (Pingvin ples, Pačiji ples, Baby shark, Kad si srećan, Ram sam sam, Majmunski ples, Chocolate...)',
+      'Igranje u igraonici',
+      'Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)',
+      'Fotografisanje sa slavljenikom',
+      'Ispraćanje gostiju',
     ],
   },
   {
-    age: "Za uzrast od 4-7 godina:",
+    age: 'Za uzrast od 4-7 godina:',
     options: [
-      "Dobrodošlica i doček slavljenika i gostiju.",
-      "Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme",
-      "Slavljenik i gosti prvo obilaze muzej i Dino park sa izložbom u vulkanu",
-      "Zatim sledi ručak u našem restoranu- švedski sto",
-      "Dino film („Dobri dinosaurus“ ili „Šetnja sa dinosaurusima“) u bioskopu Prirodnjačkog centra",
-      "Pozorišna predstava „Maksina laboratorija“",
-      "Muzička žurka, Karaoke, „Just dance“",
-      "Face painting",
-      "Društvene igre (Pogodi ko sam, Gluvi telefoni, Voćkice, Pogodi skriveni predmet)",
-      "Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)",
-      "Fotografisanje sa slavljenikom",
-      "Ispraćanje gostiju",
+      'Dobrodošlica i doček slavljenika i gostiju.',
+      'Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme',
+      'Slavljenik i gosti prvo obilaze muzej i Dino park sa izložbom u vulkanu',
+      'Zatim sledi ručak u našem restoranu- švedski sto',
+      'Dino film („Dobri dinosaurus“ ili „Šetnja sa dinosaurusima“) u bioskopu Prirodnjačkog centra',
+      'Pozorišna predstava „Maksina laboratorija“',
+      'Muzička žurka, Karaoke, „Just dance“',
+      'Face painting',
+      'Društvene igre (Pogodi ko sam, Gluvi telefoni, Voćkice, Pogodi skriveni predmet)',
+      'Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)',
+      'Fotografisanje sa slavljenikom',
+      'Ispraćanje gostiju',
     ],
   },
   {
-    age: "Za uzrast od 7-10 godina:",
+    age: 'Za uzrast od 7-10 godina:',
     options: [
-      "Dobrodošlica i doček slavljenika i gostiju.",
-      "Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme",
-      "Slavljenik i gosti prvo obilaze muzej i Dino park sa izložbom u vulkanu",
-      "Zatim sledi ručak u našem restoranu- švedski sto",
+      'Dobrodošlica i doček slavljenika i gostiju.',
+      'Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme',
+      'Slavljenik i gosti prvo obilaze muzej i Dino park sa izložbom u vulkanu',
+      'Zatim sledi ručak u našem restoranu- švedski sto',
       'Dino film ("Ledeno doba") u bioskopu Prirodnjačkog centra',
       'Pozorišna predstava "Maksina laboratorija"',
       'Muzička žurka, Karaoke, Limbo dens, "Just dance"',
-      "Face painting",
-      "Takmičarske igre (Džinovske puzle, Bacanje obruča, Probuši balon)",
-      "Društvene igre (Pogodi ko sam, Voćkice, Pogodi skriveni predmet)",
-      "Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)",
-      "Fotografisanje sa slavljenikom",
-      "Ispraćanje gostiju",
+      'Face painting',
+      'Takmičarske igre (Džinovske puzle, Bacanje obruča, Probuši balon)',
+      'Društvene igre (Pogodi ko sam, Voćkice, Pogodi skriveni predmet)',
+      'Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)',
+      'Fotografisanje sa slavljenikom',
+      'Ispraćanje gostiju',
     ],
   },
   {
-    age: "Za uzrast od 10-14 godina:",
+    age: 'Za uzrast od 10-14 godina:',
     options: [
-      "Dobrodošlica i doček slavljenika i gostiju.",
-      "Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme",
-      "Slavljenik i gosti prvo obilaze muzej i Dino park sa izložbom u vulkanu",
-      "Zatim sledi ručak u našem restoranu- švedski sto",
+      'Dobrodošlica i doček slavljenika i gostiju.',
+      'Deca u pratnji animatora odlaze u restoran na kratko osveženje, nakon čega kreće njihova pustolovina kroz vreme',
+      'Slavljenik i gosti prvo obilaze muzej i Dino park sa izložbom u vulkanu',
+      'Zatim sledi ručak u našem restoranu- švedski sto',
       'Dino film ("Ledeno doba" ili "Noć u muzeju") u bioskopu Prirodnjačkog centra',
-      "Takmičarske igre (Džinovske puzle, Bacanje obruča, Kviz, Pantomima)",
+      'Takmičarske igre (Džinovske puzle, Bacanje obruča, Kviz, Pantomima)',
       'Muzička žurka, Karaoke, Limbo dens, "Just dance"',
-      "Društvene igre (Pogodi ko sam, Pogodi skriveni predmet)",
-      "Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)",
-      "Fotografisanje sa slavljenikom",
-      "Ispraćanje gostiju",
+      'Društvene igre (Pogodi ko sam, Pogodi skriveni predmet)',
+      'Slavljenička torta, slatki sto i pinjata (po izboru slavljenika)',
+      'Fotografisanje sa slavljenikom',
+      'Ispraćanje gostiju',
     ],
   },
-];
+]
 const p =
-  "Prirodnjački centar na jedinstven i do sada neviđen način, organizuje tematske dečije rođendane. Po želji Vaših mališana, možemo Vam organizovati rođendan na temu dinosaurusi, morski svet, supermen, jednorog ili životinje Afrike. Posluživanje gostiju prepustite nama i budite gost na sopstvenoj proslavi. Za kompletnu organizaciju, pobrinuće se naš tim.";
+  'Prirodnjački centar na jedinstven i do sada neviđen način, organizuje tematske dečije rođendane. Po želji Vaših mališana, možemo Vam organizovati rođendan na temu dinosaurusi, morski svet, supermen, jednorog ili životinje Afrike. Posluživanje gostiju prepustite nama i budite gost na sopstvenoj proslavi. Za kompletnu organizaciju, pobrinuće se naš tim.'
 const groupMeals = [
   {
-    meal: "Rođendanski \n meni 1",
-    options: ["Ćevapi", "Pomfrit", "Sok"],
-    price: "Cena po osobi 450,00 din",
+    meal: 'Rođendanski \n meni 1',
+    options: ['Ćevapi', 'Pomfrit', 'Sok'],
+    price: 'Cena po osobi 450,00 din',
   },
   {
-    meal: "Slatki sto",
-    options: ["Pop cake", "Mini krofne", "Dino keksići"],
-    price: "Cena po osobi 400,00 din",
+    meal: 'Slatki sto',
+    options: ['Pop cake', 'Mini krofne', 'Dino keksići'],
+    price: 'Cena po osobi 400,00 din',
   },
   {
-    meal: "Piće za proslavu",
+    meal: 'Piće za proslavu',
     options: [
-      "Gazirani sok 2l - 350,00 din",
-      "Negazirani sok 1l - 300,00 din",
-      "Kisela voda 0,75l - 200,00 din",
+      'Gazirani sok 2l - 350,00 din',
+      'Negazirani sok 1l - 300,00 din',
+      'Kisela voda 0,75l - 200,00 din',
     ],
-    price: " ",
+    price: ' ',
   },
   {
-    meal: "Švedski sto za odrasle 1",
+    meal: 'Švedski sto za odrasle 1',
     options: [
-      "Miks suhomesnatih proizvoda",
-      "Marinirani sirevi",
-      "Vitaminska salata",
-      "Rolovani pileći file sa pekarskim krompirom",
+      'Miks suhomesnatih proizvoda',
+      'Marinirani sirevi',
+      'Vitaminska salata',
+      'Rolovani pileći file sa pekarskim krompirom',
     ],
-    price: "Cena po osobi 1500,00 din",
+    price: 'Cena po osobi 1500,00 din',
   },
   {
-    meal: "Švedski sto za odrasle 2",
-    options: [
-      "Mini senviči",
-      "Grilovani pileći štapići sa sosom od pečuraka",
-      "Hrskave tortilje",
-    ],
-    price: "Cena za 10 deset osoba 5000,00 din",
+    meal: 'Švedski sto za odrasle 2',
+    options: ['Mini senviči', 'Grilovani pileći štapići sa sosom od pečuraka', 'Hrskave tortilje'],
+    price: 'Cena za 10 deset osoba 5000,00 din',
   },
   {
-    meal: "Švedski sto za odrasle 3",
-    options: ["Pita sa mesom", "Pita sa sirom"],
-    price: "Cena za 10 deset osoba 3500,00 din",
+    meal: 'Švedski sto za odrasle 3',
+    options: ['Pita sa mesom', 'Pita sa sirom'],
+    price: 'Cena za 10 deset osoba 3500,00 din',
   },
-];
+]
 ---
 
 <Layout title="Organizacija dečijih rođendana">
   <div class="container">
     <div class="hero">
-      <h1 class="text-center text-white">
-        Dečiji rođendani u Prirodnjačkom centru
-      </h1>
+      <h1 class="text-center text-white">Dečiji rođendani u Prirodnjačkom centru</h1>
       <p class="text-white text-center">
         {p}
       </p>
@@ -138,60 +132,49 @@ const groupMeals = [
     </div>
     <h3 class="text-center">Organizacija dečijeg rođendana</h3>
     <div class="grid grid-2">
-      {
-        ageOptions.map((age) => (
-          <ReactCard heading={age.age} options={age.options} client:load/>
-        ))
-      }
+      {ageOptions.map((age) => <ReactCard heading={age.age} options={age.options} client:load />)}
     </div>
     <h3 class="text-center">Ponuda grupnih obroka</h3>
-    <div class="grid grid-3">
+    <div class="grid grid-3 cards">
       {
         groupMeals.map((meal) => (
           <Card
             backgroundColor={colors.light}
             heading={meal.meal}
             options={meal.options}
-            height="20rem"
             shadow
             light
+            height="20rem"
             price={meal.price}
           />
         ))
       }
     </div>
-    <Card
-      backgroundColor={colors.light}
-      heading="Piće za odrasle"
-      options={[
-        "Coca-cola, Fanta, Bitter Lemon, Sprite, i Ice Tea - 200,00 din",
-        "Gazirana i negazirana voda - 150,00 din",
-        "Negazirani sokovi (više ukusa) - 200,00 din",
-        "Sok u čaši (Coca-cola i đus) - 80,00 din",
-        "U letnjem periodu, na raspolaganju Vam je i sladoled, ukus čokolade, vanile, jagode, lešnika, kivija, šumskog voća, staćatele i plazme - 100,00 din",
-        "Piva Tuborg i Heineken, viski Balantines i Pelinkovac",
-        "Espreso, Nescafe i domaća kafa",
-        "Za proslave rođendana",
-      ]}
-      shadow
-      light
-      price=" "
-      height="20rem"
-    />
-    <div class="slider">
-      <ImageSlider
-        location="birthday"
-        numberOfElements={5}
-        jpeg
-        height="15rem"
+    <div class="cards">
+      <Card
+        backgroundColor={colors.light}
+        heading="Piće za odrasle"
+        options={[
+          'Coca-cola, Fanta, Bitter Lemon, Sprite, i Ice Tea - 200,00 din',
+          'Gazirana i negazirana voda - 150,00 din',
+          'Negazirani sokovi (više ukusa) - 200,00 din',
+          'Sok u čaši (Coca-cola i đus) - 80,00 din',
+          'U letnjem periodu, na raspolaganju Vam je i sladoled, ukus čokolade, vanile, jagode, lešnika, kivija, šumskog voća, staćatele i plazme - 100,00 din',
+          'Piva Tuborg i Heineken, viski Balantines i Pelinkovac',
+          'Espreso, Nescafe i domaća kafa',
+          'Za proslave rođendana',
+        ]}
+        shadow
+        light
+        price=""
+        height="20rem"
       />
     </div>
-    <p class="text-center mt">
-      Rođendansku tortu (sa deklaracijom) obezbeđuje slavljenik.
-    </p>
-    <p class="text-center">
-      Cena zakupa termina je 10.000,00 dinara, u trajanju od 3 sata.
-    </p>
+    <div class="slider">
+      <ImageSlider location="birthday" numberOfElements={5} jpeg height="30rem" />
+    </div>
+    <p class="text-center mt">Rođendansku tortu (sa deklaracijom) obezbeđuje slavljenik.</p>
+    <p class="text-center">Cena zakupa termina je 10.000,00 dinara, u trajanju od 3 sata.</p>
 
     <a href="/ivana" class="center">
       <Button text="Kontaktirajte nas" marginTop="2rem" />
@@ -206,7 +189,7 @@ const groupMeals = [
   }
   .hero {
     height: 25rem;
-    background-image: url("/birthday.jpeg");
+    background-image: url('/birthday.jpeg');
     margin-left: calc(-1 * var(--main-horizontal-padding));
     margin-top: calc(-1 * var(--main-vertical-padding));
     margin-right: calc(-1 * var(--main-horizontal-padding));
@@ -217,12 +200,17 @@ const groupMeals = [
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     background-position: center;
-    padding: 6rem var(--main-horizontal-padding) 10rem
-      var(--main-horizontal-padding);
+    padding: 6rem var(--main-horizontal-padding) 10rem var(--main-horizontal-padding);
   }
   h3 {
     margin-top: 5.25rem;
     margin-bottom: 5rem;
+  }
+  .cards {
+    padding: 1rem;
+    width: 100%;
+    margin: -1rem;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 768px) {

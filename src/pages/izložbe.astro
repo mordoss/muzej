@@ -18,7 +18,7 @@ const paragraphs = [
       </>
     ))
   }
-  <div class="grid col-3-1">
+  <div class="grid grid-3">
     <LinkCard
       location="exhibitions"
       link="svet-dinosaurusa"
@@ -40,14 +40,8 @@ const paragraphs = [
       small
     />
   </div>
-  <div class="grid col-3-2">
-    <LinkCard
-      location="exhibitions"
-      link="nebesko-kamenje"
-      text="Nebesko kamenje"
-      square
-      smallest
-    />
+  <div class="grid grid-3">
+  
     <LinkCard
       location="exhibitions"
       link="zivotinje-afrike"
@@ -59,30 +53,31 @@ const paragraphs = [
       link="biodiverzitet-srbije"
       text="Biodiverzitet Srbije"
       square
-      smallest
+      small
     />
-  </div>
-  <div class="grid col-4">
     <LinkCard
-      location="exhibitions"
-      link="geodiverzitet-srbije"
-      text="Geodiverzitet Srbije"
-      square
-      smallest
-    />
-    <LinkCard location="exhibitions" link="vulkan" text="Vulkan" smallest />
+    location="exhibitions"
+    link="geodiverzitet-srbije"
+    text="Geodiverzitet Srbije"
+    square
+    small
+  />
+  </div>
+  <div class="grid grid-3">
+  
+    <LinkCard location="exhibitions" link="vulkan" text="Vulkan" small />
     <LinkCard
       location="exhibitions"
       link="minerali"
       text="Fluorescentni minerali"
       square
-      smallest
+      small
     />
     <LinkCard
       location="exhibitions"
       link="mamut"
       text='Mamut "Kika"'
-      smallest
+      small
     />
   </div>
 </Layout>

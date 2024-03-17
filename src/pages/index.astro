@@ -1,19 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import LinkCard from "../components/LinkCard.astro";
+import Layout from '../layouts/Layout.astro'
+import LinkCard from '../components/LinkCard.astro'
 
-import { workingHours, indexInfo, indexCards } from "../utils/constants";
-import ImageSlider from "../components/ImageSlider.astro";
-// dodaj mapu
-// ovde slika line: 18
-const bigCards = indexCards.slice(0, 2);
-const smallCards = indexCards.slice(2, 5);
+import { workingHours, indexInfo, indexCards } from '../utils/constants'
+import ImageSlider from '../components/ImageSlider.astro'
+
+const bigCards = indexCards.slice(0, 2)
+const smallCards = indexCards.slice(2, 5)
 const location =
-  "Prirodnjački centar Svilajnac izgrađen je na najfrekventnijem turističkom pravcu – na samo 7 km od auto-puta (E75), a pored regionalnog puta Markovac-Svilajnac-Despotovac u neposrednoj blizini kompleksa Sportsko-turističkog centra.";
+  'Prirodnjački centar Svilajnac izgrađen je na najfrekventnijem turističkom pravcu – na samo 7 km od auto-puta (E75), a pored regionalnog puta Markovac-Svilajnac-Despotovac u neposrednoj blizini kompleksa Sportsko-turističkog centra.'
 const review =
-  "Ponuda i reklama je nešto na čemu radi tim stručnjaka i nepogrešivo je učinkovita. Dobra reklama može da proda svaki proizvod ali iskustva korisnika, u našem slučaju posetilaca, je jedina relevantna stvar i nešto na šta tim stručnjaka ne može da utiče.";
+  'Ponuda i reklama je nešto na čemu radi tim stručnjaka i nepogrešivo je učinkovita. Dobra reklama može da proda svaki proizvod ali iskustva korisnika, u našem slučaju posetilaca, je jedina relevantna stvar i nešto na šta tim stručnjaka ne može da utiče.'
 const offer =
-  "Ponuda i reklama je nešto na čemu radi tim stručnjaka i nepogrešivo je učinkovita. Dobra reklama može da proda svaki proizvod ali iskustva korisnika, u našem slučaju posetilaca, je jedina relevantna stvar i nešto na šta tim stručnjaka ne može da utiče.";
+  'Ponuda i reklama je nešto na čemu radi tim stručnjaka i nepogrešivo je učinkovita. Dobra reklama može da proda svaki proizvod ali iskustva korisnika, u našem slučaju posetilaca, je jedina relevantna stvar i nešto na šta tim stručnjaka ne može da utiče.'
 ---
 
 <Layout title="Početna"
@@ -33,20 +32,14 @@ const offer =
     <div class="grid grid-2">
       {
         bigCards.map((card) => (
-          <LinkCard link={card.link} text={card.text} square location="index" />
+          <LinkCard link={card.link} text={card.text} square location="index" small />
         ))
       }
     </div>
     <div class="grid grid-3">
       {
         smallCards.map((card) => (
-          <LinkCard
-            link={card.link}
-            text={card.text}
-            square
-            location="index"
-            small
-          />
+          <LinkCard link={card.link} text={card.text} square location="index" small />
         ))
       }
     </div>
@@ -56,7 +49,7 @@ const offer =
     {review}
   </p>
   <div class="reviews">
-    <ImageSlider location="reviews" numberOfElements={5} height="10rem" />
+    <ImageSlider location="reviews" numberOfElements={5} height="17rem" />
   </div>
   <div class="map-container">
     <h1 class="text-center">Kako do nas?</h1>
@@ -72,10 +65,7 @@ const offer =
       <div>
         <p>{location}</p>
         <br class="hide" />
-        <p>
-          Udaljenost od Beograda je 110 km; od Kragujevca 45 km; Niša 132 km;
-          Smedereva 60 km
-        </p>
+        <p>Udaljenost od Beograda je 110 km; od Kragujevca 45 km; Niša 132 km; Smedereva 60 km</p>
         <br />
         <div class="location">
           <img src="pin.svg" alt="lokacija" />
@@ -125,7 +115,7 @@ const offer =
 <style>
   .main-hero {
     height: 35rem;
-    background-image: url("/main-hero.jpeg");
+    background-image: url('/main-hero.jpeg');
     margin-left: calc(-1 * var(--main-horizontal-padding));
     margin-right: calc(-1 * var(--main-horizontal-padding));
     margin-top: calc(-1 * var(--main-vertical-padding));

@@ -19,7 +19,7 @@ const { heading, options, prices, dropdowns } = Astro.props
       {prices.map((price: string) => <p>{price}</p>)}
     </div>
     <div class="input-container">
-      <Input />
+      <Input placeholder="Količina"/>
     </div>
     <Button text="Pošaljite zahtev" fullWidth />
   </div>
