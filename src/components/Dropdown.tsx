@@ -35,7 +35,8 @@ const Dropdown: FC<IProps> = ({ options }) => {
       <button
         ref={buttonRef}
         className={`${showOptions && 'open'} dropdown-btn`}
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault()
           setShowOptions(!showOptions)
         }}
       >

@@ -13,6 +13,9 @@ dependencies:
   '@fontsource-variable/noto-sans':
     specifier: ^5.0.1
     version: 5.0.1
+  '@hookform/error-message':
+    specifier: ^2.0.1
+    version: 2.0.1(react-dom@18.2.0)(react-hook-form@7.51.2)(react@18.2.0)
   '@react-email/components':
     specifier: ^0.0.15
     version: 0.0.15(@types/react@18.2.65)(react-email@2.1.0)(react@18.2.0)
@@ -37,6 +40,9 @@ dependencies:
   react-email:
     specifier: ^2.1.0
     version: 2.1.0(@babel/core@7.24.0)(eslint@8.57.0)
+  react-hook-form:
+    specifier: ^7.51.2
+    version: 7.51.2(react@18.2.0)
   resend:
     specifier: ^3.2.0
     version: 3.2.0
@@ -988,6 +994,18 @@ packages:
 
   /@fontsource-variable/noto-sans@5.0.1:
     resolution: {integrity: sha512-XlVsb4O0dQPgl8wupiP4z1HT7BMKVHUvzDQvtC061hB5ylJ+ksDqnI8AsK/Xa9SAoYGXz2K3ehuE76HyEz81OQ==}
+    dev: false
+
+  /@hookform/error-message@2.0.1(react-dom@18.2.0)(react-hook-form@7.51.2)(react@18.2.0):
+    resolution: {integrity: sha512-U410sAr92xgxT1idlu9WWOVjndxLdgPUHEB8Schr27C9eh7/xUnITWpCMF93s+lGiG++D4JnbSnrb5A21AdSNg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-hook-form: ^7.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-hook-form: 7.51.2(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -6190,6 +6208,15 @@ packages:
       - uglify-js
       - utf-8-validate
       - webpack-cli
+    dev: false
+
+  /react-hook-form@7.51.2(react@18.2.0):
+    resolution: {integrity: sha512-y++lwaWjtzDt/XNnyGDQy6goHskFualmDlf+jzEZvjvz6KWDf7EboL7pUvRCzPTJd0EOPpdekYaQLEvvG6m6HA==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-refresh@0.14.0:

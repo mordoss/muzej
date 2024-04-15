@@ -1,0 +1,16 @@
+.name-email {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.name-email * {
+  flex: 1;
+}
+.social {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}

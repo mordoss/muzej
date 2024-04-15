@@ -1,0 +1,36 @@
+label {
+  color: var(--text-main);
+}
+.checkboxes {
+  display: flex;
+  gap: 1rem;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.styled-checkbox {
+  display: none;
+}
+.checkbox-label {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+.checkbox-label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--text-light);
+  background-color: transparent;
+  border-radius: 0.5rem;
+}
+.styled-checkbox:checked + .checkbox-label:before {
+  background-color: var(--text-light);
+  border-color: var(--text-light);
+}

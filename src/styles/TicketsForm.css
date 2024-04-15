@@ -1,0 +1,18 @@
+.meals {
+  margin: 5rem 0;
+}
+.sub-heading {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.rules {
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

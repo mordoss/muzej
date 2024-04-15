@@ -1,9 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Input from '../components/Input.astro'
-import Button from '../components/Button.astro'
-
 import { contacts } from '../utils/constants'
+import ContactForm from '../components/ContactForm'
 ---
 
 <Layout title="Zahtev za grupnu posetu">
@@ -11,20 +9,7 @@ import { contacts } from '../utils/constants'
     <img src="laptop.jpeg" alt="laptop" class="left-image" />
     <div class="left-column">
       <h1>Kontakt</h1><p>Imate neko pitanje za nas? Pišite nam.</p>
-      <div class="name-email">
-        <div>
-          <Input placeholder="Vaše ime" type="text" />
-        </div>
-        <div>
-          <Input placeholder="Vaša e-mail adresa" type="email" />
-        </div>
-      </div>
-      <Input placeholder="Vaša poruka" type="textarea" />
-      <div class="social">
-        <Button text="Pošaljite poruku" semiwide />
-        <a href=""><img src="fb.svg" alt="" /></a>
-        <a href=""><img src="ig.svg" alt="" /></a>
-      </div>
+      <ContactForm client:load/>
       <div class="contacts">
         {
           contacts.emails.map((contact) => (
@@ -63,22 +48,7 @@ import { contacts } from '../utils/constants'
   .left-column {
     flex: 1;
   }
-  .name-email {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1.5rem;
-  }
-  .name-email * {
-    flex: 1;
-  }
-  .social {
-    margin-top: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
+  
   .contacts {
     margin-top: 6.5rem;
   }

@@ -97,10 +97,12 @@ const mainLinks = ['o nama', 'ulaznice', 'kupovina grupnih karata', 'kontakt']
     .grid {
       gap: 0.5rem;
       margin: 0.5rem 0;
+      grid-template-columns: 1fr !important;
     }
     main {
       min-height: calc(100vh - 10rem);
     }
+    
   }
   body {
     background-color: var(--bg);
@@ -159,4 +161,13 @@ const mainLinks = ['o nama', 'ulaznice', 'kupovina grupnih karata', 'kontakt']
   .shadow {
     filter: drop-shadow(2px 8px 10px rgba(124, 73, 5, 0.16));
   }
+ 
+  .error {
+  color: #bf1650;
+}
+
+.error::before {
+  display: inline;
+  content: "⚠ ";
+}
 </style>
